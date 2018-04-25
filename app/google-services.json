@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "574913567730",
+    "firebase_url": "https://travel-survival-unit.firebaseio.com",
+    "project_id": "travel-survival-unit",
+    "storage_bucket": "travel-survival-unit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574913567730:android:7576c0ec59eef659",
+        "android_client_info": {
+          "package_name": "com.example.asusnb.travelsurvivalunit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574913567730-qmg2nfks69757amgk6m3plvjil5pgvsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwCjgJYeLY1y8qc_zWYg3zDYzLGWqe3tA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
