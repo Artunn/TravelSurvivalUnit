@@ -10,4 +10,19 @@
     <string name="settingsHomeCountry">home country :</string>
     <string name="settingsBackground">background :</string>
     <string name="theme">choose</string>
+    <string name="translation_button_text">translation</string>
+    <string name="traditions_button_text">traditions</string>
+    <string name="fun_facts_button_text">fun facts</string>
+    <string name="settings_button_text">settings</string>
+    <string name="world_clock_button_text">world clock</string>
+    <string name="favourites_button_text">my favourites</string>
+    <string name="refresh">refresh</string>
+    <string name="city_name">istanbul</string>
+    <string name="degree">4\u00b0 C</string>
+    <string name="currency1_str">1 GBP = 5.5301 TRY</string>
+    <string name="currency2_str">1 TRY = 0.1808 GBP</string>
+    <string name="last_retrieved">Last retrieved 3 days ago</string>
+    <string name="name_surname">null pointers</string>
+    <string name="translation_dir">english - turkish</string>
+    <string name="country">turkey</string>
 </resources>
