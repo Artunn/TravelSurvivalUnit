@@ -39,6 +39,7 @@ public class Register1 extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()){
             case R.id.continueButton:
                 registrationX();
+                System.out.println("SEA");
                 break;
         }
 
