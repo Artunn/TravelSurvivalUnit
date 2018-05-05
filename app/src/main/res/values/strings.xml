@@ -4,4 +4,10 @@
     <string name="RESET_PASSWORD"><u>Reset Password</u></string>
     <string name="CONTINUE_WITHOUT_REGISTRATION"><u>Continue Without Registration</u></string>
     <string name="password">password</string>
+    <string name="settingsName">name : null</string>
+    <string name="settingsSurname">surname : pointers</string>
+    <string name="settingsLang">lang :</string>
+    <string name="settingsHomeCountry">home country :</string>
+    <string name="settingsBackground">background :</string>
+    <string name="theme">choose</string>
 </resources>
