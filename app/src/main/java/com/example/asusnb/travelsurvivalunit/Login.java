@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText username;
@@ -26,6 +27,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     TextView resetPassword;
     TextView continueWithoutRegistration;
     FirebaseAuth auth;
+    FirebaseUser user;
     ImageView backgroundTsu;
 
     @Override
@@ -56,7 +58,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(Login.this, "Hi!",Toast.LENGTH_LONG).show();
+                                    user = auth.getCurrentUser();
+                                    Toast.makeText(Login.this, user.getEmail().toString(),Toast.LENGTH_LONG).show();
                                 }
                             }
                         });
