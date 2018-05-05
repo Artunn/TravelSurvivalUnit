@@ -47,6 +47,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         continueWithoutRegistration = (TextView) findViewById(R.id.continueWithoutRegistration);
         login.setOnClickListener(this);
         createAnAccount.setOnClickListener(this);
+        allahallahallahallahbunasilsevmek
     }
 
     public void onClick(View v) {
