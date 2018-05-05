@@ -41,7 +41,7 @@ public class Register1 extends AppCompatActivity implements View.OnClickListener
                 registrationX();
                 break;
         }
-        
+
     }
 
     public void registrationX(){
