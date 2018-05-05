@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.passwordConfirm);
         rememberMe = (CheckBox) findViewById(R.id.rememberMe);
-        login = (Button) findViewById(R.id.login);
+        login = (Button) findViewById(R.id.login);sd
         createAnAccount = (TextView) findViewById(R.id.createAnAccount);
         resetPassword = (TextView) findViewById(R.id.resetPassword);
         continueWithoutRegistration = (TextView) findViewById(R.id.continueWithoutRegistration);
