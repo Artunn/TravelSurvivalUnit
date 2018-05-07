@@ -6,7 +6,6 @@ import android.widget.ImageView;
 
 public class UserInfo implements UniversalData {
 
-
     User user;
     //Language targetLanguage;
     //City destination;

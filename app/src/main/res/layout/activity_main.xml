@@ -194,6 +194,7 @@
             android:id="@+id/settings_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="openSettings"
             android:text="@string/settings_button_text"
             android:textAllCaps="false"
             android:textSize="24sp" />

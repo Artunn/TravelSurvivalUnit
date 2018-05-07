@@ -2,6 +2,7 @@
 
      public interface UniversalData {
           Integer[] myAvatarsId = { R.drawable.avatar1, R.drawable.avatar2};
+
           final int TRANSPORTATION = 0;
           final int ACCODOMATION = 1;
           final int RESTAURANT = 2;

@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.example.asusnb.travelsurvivalunit.SettingsActivity">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="166dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="152dp"
+        android:layout_height="151dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"><![CDATA[
@@ -23,6 +27,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@+id/constraintLayout"
+            android:background="#70000000"
             android:orientation="vertical"
             tools:layout_editor_absoluteX="208dp"
             tools:layout_editor_absoluteY="210dp">
@@ -31,43 +36,53 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/catcafeaccent"
                 android:layout_weight="1"
-                android:text="@string/settingsName" />
+                android:fontFamily="@font/catcafeaccent"
+                android:paddingLeft="4dp"
+                android:text="@string/settingsName"
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/catcafeaccent"
                 android:layout_weight="1"
-                android:text="@string/settingsSurname" />
+                android:fontFamily="@font/catcafeaccent"
+                android:paddingLeft="4dp"
+                android:text="@string/settingsSurname"
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
-                android:fontFamily="@font/catcafeaccent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/settingsLang" />
+                android:fontFamily="@font/catcafeaccent"
+                android:paddingLeft="4dp"
+                android:text="@string/settingsLang"
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
-                android:fontFamily="@font/catcafeaccent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/settingsHomeCountry" />
+                android:fontFamily="@font/catcafeaccent"
+                android:paddingLeft="4dp"
+                android:text="@string/settingsHomeCountry"
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
-                android:fontFamily="@font/catcafeaccent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:clickable="true"
+                android:fontFamily="@font/catcafeaccent"
                 android:onClick=""
-                android:text="@string/settingsBackground" />
+                android:paddingLeft="4dp"
+                android:text="@string/settingsBackground"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <android.support.constraint.ConstraintLayout
@@ -76,7 +91,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="#50000000">
+            android:background="#70000000">
 
             <ImageView
                 android:id="@+id/avatarImage"
@@ -89,7 +104,8 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/avatar1" />
 
             <Button
                 android:id="@+id/button2"
@@ -124,5 +140,36 @@
         android:paddingLeft="8dp"
         android:paddingRight="8dp" />
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="320dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/catcafeaccent"
+        android:gravity="center"
+        android:text="SETTINGS"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="264dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="323dp" />
 
 </android.support.constraint.ConstraintLayout>
