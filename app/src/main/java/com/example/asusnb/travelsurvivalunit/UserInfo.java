@@ -62,8 +62,40 @@ public class UserInfo implements UniversalData {
     }
 
     //public void setBackground( int image )
-    //public void addToFavourites ( String str )
-    //public void setTargetLanguage( Language l )
-    //public void set destination
 
+    public void setBackground (int image)
+    {
+
+    }
+
+
+    public void addToFavourites ( String str )
+    {
+        favourites.add(str);
+    }
+
+    public Collections getFavourites()
+    {
+        return favourites;
+    }
+
+    public void setTargetLanguage( Language l )
+    {
+        targetLanguage = l;
+    }
+
+    public Language getTargetLanguage(){
+
+        return targetLanguage;
+    }
+
+    public void set destination ( City destination)
+    {
+        this.destination = destination;
+    }
+
+    public City getDestination()
+    {
+        return destination;
+    }
 }
