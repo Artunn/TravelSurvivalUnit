@@ -1,14 +1,11 @@
 package com.example.asusnb.travelsurvivalunit;
 
-import android.graphics.YuvImage;
-import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
@@ -22,7 +19,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register1);
+        setContentView(R.layout.activity_register);
 
         username = (EditText) findViewById(R.id.username);
         email = (EditText) findViewById(R.id.email);
