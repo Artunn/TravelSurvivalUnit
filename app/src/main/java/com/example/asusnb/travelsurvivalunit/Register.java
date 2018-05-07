@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Register1 extends AppCompatActivity implements View.OnClickListener{
+public class Register extends AppCompatActivity implements View.OnClickListener{
 
     EditText username;
     EditText email;
