@@ -1,4 +1,4 @@
-package com.concretepage;
+
 import java.util.ArrayList;
 import java.util.List;
 import android.content.Context;
@@ -28,7 +28,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
                 " avatarId INTEGER,"+
                 " count INTEGER,"+
                 " motherLanguage VARCHAR(30),"+
-                " targetLanguage VARCHAR(30)),"+
+                " targetLanguage VARCHAR(30),"+
                 " destination VARCHAR(30),";
         db.execSQL(sql);
     }
@@ -42,7 +42,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Insert data into table
     public void insertData( User user  ){
         SQLiteDatabase db = this.getWritableDatabase();
-        SQLiteStatement stmt = db.compileStatement("INSERT INTO user_info (username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination " +
+        SQLiteStatement stmt = db.compileStatement("INSERT INTO user_info username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, " +
                 "VALUES (?,?,?,?)");
         stmt.bindString(1, user.getUsername());
         stmt.bindString(2, user.getPassword());
@@ -89,7 +89,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
             usr.setId(cursor.getInt(0));
             usr.setUsername(cursor.getString(1));
             usr.setPassword(cursor.getString (2));
-            usr.setHomeCountry(cursor.getString(3);
+            usr.setHomeCountry(cursor.getString(3));
             usr.setName(cursor.getString(4));
             usr.setSurname(cursor.getString(5));
             usr.setAvatar(cursor.getInt(6));
@@ -121,7 +121,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         usr.setId(cursor.getInt(0));
         usr.setUsername(cursor.getString(1));
         usr.setPassword(cursor.getString (2));
-        usr.setHomeCountry(cursor.getString(3);
+        usr.setHomeCountry(cursor.getString(3) );
         usr.setName(cursor.getString(4));
         usr.setSurname(cursor.getString(5));
         usr.setAvatar(cursor.getInt(6));

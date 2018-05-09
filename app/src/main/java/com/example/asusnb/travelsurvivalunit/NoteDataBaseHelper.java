@@ -19,7 +19,7 @@ public class NoteDataBaseHelper extends SQLiteOpenHelper {
         private static final String DATABASE_NAME = "notes_db";
 
 
-        public DatabaseHelper(Context context) {
+        public NoteDataBaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
         }
 

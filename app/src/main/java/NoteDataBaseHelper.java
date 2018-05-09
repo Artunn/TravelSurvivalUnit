@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class NoteDatabaseHelper extends SQLiteOpenHelper {
+public class NoteDataBaseHelper extends SQLiteOpenHelper {
 
     // Database Version
     private static final int DATABASE_VERSION = 1;
@@ -19,7 +19,7 @@ public class NoteDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "notes_db";
 
 
-    public NoteDatabaseHelper(Context context) {
+    public NoteDataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
