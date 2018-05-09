@@ -17,7 +17,12 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        artun = new UserInfo("topistan", "artunn", "artun","cura");
+        artun = new UserInfo("bursa", "artunn", "artun","cura");
+
+        TextView homeCountry = findViewById( R.id.textView7);
+        TextView homeCountry2 = findViewById(R.id.textView4);
+        homeCountry.setText( "" + artun.getHomeCountry());
+        homeCountry2.setText( "home country : " + artun.getHomeCountry());
     }
     public void optionTheme(View view) {
         String[] listItems = new String[] {"item1","item2"};
@@ -33,6 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 
     public void changeAvatarNext(View view) {
         TextView text;
