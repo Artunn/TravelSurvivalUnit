@@ -1,7 +1,7 @@
     package com.example.asusnb.travelsurvivalunit;
     import java.util.ArrayList;
 
-   package com.example.asusnb.travelsurvivalunit;
+    //package com.example.asusnb.travelsurvivalunit;
     import java.util.ArrayList;
     import android.content.Context;
     import java.util.List;
@@ -21,7 +21,7 @@
         String targetLanguage;
         String destination;
         NoteDataBaseHelper ndbh;
-        //int backround;
+        //int background;
         //int count2;
 
 
@@ -51,7 +51,7 @@
 
         }
 
-        public User ( int id, String username, String password, String homeCountry, String name, String surname,Language motherLanguage, Language targetLanguage, String destinationestination, Context context ){
+        public User ( int id, String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination, Context context ){
             this.id = id;
             this.username = username;
             this.password = password;
@@ -195,9 +195,9 @@
             return motherLanguage;
         }
 
-        public int addNote( String note )
+        public long addNote( String note )
         {
-            return ndbh.insertNote(String note);
+            return ndbh.insertNote(note);
         }
 
         public Note getNote( long id )
@@ -217,7 +217,7 @@
 
         public void deleteNote(Note note)
         {
-            return ndbh.deleteNote(note);
+            ndbh.deleteNote(note);
         }
 
         public NoteDataBaseHelper getNoteDataBaseHelper()
