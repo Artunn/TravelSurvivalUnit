@@ -6,6 +6,7 @@ import android.widget.ImageView;
 
 public class UserInfo implements UniversalData {
 
+    /*
     User user;
     //Language targetLanguage;
     //City destination;
@@ -89,7 +90,7 @@ public class UserInfo implements UniversalData {
         return targetLanguage;
     }
 
-    public void set destination ( City destination)
+    public void setDestination ( City destination)
     {
         this.destination = destination;
     }
@@ -98,4 +99,5 @@ public class UserInfo implements UniversalData {
     {
         return destination;
     }
+    */
 }

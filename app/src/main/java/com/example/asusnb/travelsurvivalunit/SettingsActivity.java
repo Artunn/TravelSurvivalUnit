@@ -11,13 +11,13 @@ package com.example.asusnb.travelsurvivalunit;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    UserInfo artun;
+    User artun;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        artun = new UserInfo("topistan", "artunn", "artun","cura");
+        artun = new User("artunn", "1234", "bursa", "artun", "cura", "English", "Turkish", "Turkey", null);
     }
     public void optionTheme(View view) {
         String[] listItems = new String[] {"item1","item2"};
