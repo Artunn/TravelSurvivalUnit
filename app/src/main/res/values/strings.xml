@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Travel Survival Unit</string>
-    <string name="CREATE_AN_ACCOUNT"><u>Create an account</u></string>
-    <string name="RESET_PASSWORD"><u>Reset Password</u></string>
-    <string name="CONTINUE_WITHOUT_REGISTRATION"><u>Continue Without Registration</u></string>
+    <string name="app_name" translatable="false">Travel Survival Unit</string>
+    <string name="create_an_account"><u>Create an account</u></string>
+    <string name="reset_password"><u>Reset Password</u></string>
+    <string name="continue_without_registration"><u>Continue Without Registration</u></string>
     <string name="password">password</string>
     <string name="settingsName">name : null</string>
     <string name="settingsSurname">surname : pointers</string>
