@@ -26,4 +26,17 @@
     <string name="name_surname">null pointers</string>
     <string name="translation_dir">english - turkish</string>
     <string name="country">turkey</string>
+    <string-array name="language_array">
+        <item>Türkçe</item>
+        <item>English</item>
+        <item>Français</item>
+        <item>Deutsche</item>
+    </string-array>
+    <string-array name="country_array">
+        <item>Türkiye</item>
+        <item>England</item>
+        <item>France</item>
+        <item>Germany</item>
+    </string-array>
+
 </resources>
