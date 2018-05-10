@@ -21,7 +21,8 @@
     <string name="degree">4\u00b0 C</string>
     <string name="currency1_str">1 GBP = 5.5301 TRY</string>
     <string name="currency2_str">1 TRY = 0.1808 GBP</string>
-    <string name="last_retrieved">Last retrieved 3 days ago</string>
+    <string name="last_retrieved_beg">Last retrieved</string>
+    <string name="last_retrieved_end">days ago</string>
     <string name="name_surname">null pointers</string>
     <string name="translation_dir">english - turkish</string>
     <string name="country">turkey</string>
