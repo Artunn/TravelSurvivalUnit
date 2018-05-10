@@ -1,5 +1,7 @@
 package com.example.asusnb.travelsurvivalunit;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -47,19 +49,22 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         Toast.makeText(this,"Please enter a username",Toast.LENGTH_LONG);
         if(TextUtils.isEmpty(username.getText().toString().trim())){
             Toast.makeText(this,"Please enter a username",Toast.LENGTH_LONG);
-            if(TextUtils.isEmpty(email.getText().toString().trim())){
-                Toast.makeText(this,"Please enter a email",Toast.LENGTH_LONG);
-            }
-            if(TextUtils.isEmpty(password.getText().toString().trim())){
-                Toast.makeText(this,"Please enter a password",Toast.LENGTH_LONG);
-            }
-            if(TextUtils.isEmpty(passwordConfirm.getText().toString().trim())){
-                Toast.makeText(this,"Password Confirm line must be filled",Toast.LENGTH_LONG);
-            }
-            if(!password.getText().equals(passwordConfirm.getText().toString().trim())){
-                Toast.makeText(this,"Password and Confirm Passwords lines must match!",Toast.LENGTH_LONG);
-            }
         }
-
+        else if(TextUtils.isEmpty(email.getText().toString().trim())){
+            Toast.makeText(this,"Please enter a email",Toast.LENGTH_LONG);
+        }
+        else if(TextUtils.isEmpty(password.getText().toString().trim())){
+            Toast.makeText(this,"Please enter a password",Toast.LENGTH_LONG);
+        }
+        else if(TextUtils.isEmpty(passwordConfirm.getText().toString().trim())){
+            Toast.makeText(this,"Password Confirm line must be filled",Toast.LENGTH_LONG);
+        }
+        else if(!password.getText().equals(passwordConfirm.getText().toString().trim())){
+            Toast.makeText(this,"Password and Confirm Passwords lines must match!",Toast.LENGTH_LONG);
+        }
+        else{
+            startActivity(new Intent(this, RegisterSecondScreen.class));
+            break;
+        }
     }
 }
