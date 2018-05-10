@@ -17,7 +17,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        artun = new UserInfo("topistan", "artunn", "artun","cura");
+        artun = new UserInfo("bursa", "artunn", "artun","cura");
     }
     public void optionTheme(View view) {
         String[] listItems = new String[] {"item1","item2"};
