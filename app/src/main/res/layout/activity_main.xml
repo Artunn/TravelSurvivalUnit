@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginStart="40dp"
+            android:clickable="true"
             app:layout_constraintBottom_toTopOf="@+id/refresh_main"
             app:layout_constraintStart_toStartOf="@+id/trans_dir_main"
             app:srcCompat="@android:drawable/ic_menu_rotate" />
