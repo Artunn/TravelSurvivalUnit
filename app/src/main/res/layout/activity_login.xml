@@ -4,20 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/background"
     android:minHeight="52dp"
     tools:context=".Login"
     tools:layout_editor_absoluteY="81dp">
-
-    <ImageView
-        android:id="@+id/backgroundTsu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:cropToPadding="false"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -95,18 +85,18 @@
     <TextView
         android:id="@+id/resetPassword"
         android:layout_width="106dp"
-        android:layout_height="22dp"
+        android:layout_height="18dp"
         android:layout_marginEnd="56dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="56dp"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/catcafeaccent"
-        android:text="@string/RESET_PASSWORD"
+        android:text="@string/reset_password"
         android:textColor="@android:color/white"
         app:layout_constraintBaseline_toBaselineOf="@+id/createAnAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/createAnAccount"
-        tools:text="@string/RESET_PASSWORD" />
+        tools:text="@string/reset_password" />
 
     <TextView
         android:id="@+id/continueWithoutRegistration"
@@ -115,7 +105,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/catcafeaccent"
-        android:text="@string/CONTINUE_WITHOUT_REGISTRATION"
+        android:text="@string/continue_without_registration"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,24 +113,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createAnAccount"
         app:layout_constraintVertical_bias="0.0"
-        tools:text="@string/CONTINUE_WITHOUT_REGISTRATION" />
+        tools:text="@string/continue_without_registration" />
 
     <TextView
-        android:fontFamily="@font/catcafeaccent"
         android:id="@+id/createAnAccount"
         android:layout_width="120dp"
-        android:layout_height="22dp"
+        android:layout_height="18dp"
         android:layout_marginLeft="60dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
         android:clickable="true"
         android:focusable="true"
-        android:onClick=""
-        android:text="@string/CREATE_AN_ACCOUNT"
+        android:fontFamily="@font/catcafeaccent"
+        android:text="@string/create_an_account"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rememberMe"
-        tools:text="@string/CREATE_AN_ACCOUNT" />
+        tools:text="@string/create_an_account" />
 
 
 </android.support.constraint.ConstraintLayout>
