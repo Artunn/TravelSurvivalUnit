@@ -6,12 +6,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.example.asusnb.travelsurvivalunit.User;
 
 public class UserDatabaseHelper extends SQLiteOpenHelper {
     private static int DATABASE_VERSION = 1;
     private static String DB_FILE_NAME = "user";
+
+    //PRIVATE YAPILACAK. TEST İÇİN DEFAULT
+    private static ArrayList<User> users;
+
 
     public UserDatabaseHelper(Context context) {
         super(context, DB_FILE_NAME, null, DATABASE_VERSION);
@@ -47,7 +53,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     public void insertData(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
         SQLiteStatement stmt = db.compileStatement("INSERT INTO user_info (username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination) "
-                + "VALUES (?,?,?,?)");
+                + "VALUES (?,?,?,?,?,?,?,?,?,?)");
         stmt.bindString(1, user.getUsername());
         stmt.bindString(2, user.getPassword());
         stmt.bindString(3, user.getHomeCountry());
@@ -85,8 +91,9 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Select all data from the table
-    public List getUsers() {
-        List users = new ArrayList();
+
+    public void updateUsers() {
+        //users.clear();
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination from user_info ORDER BY id ASC";
         Cursor cursor = db.rawQuery(query, null);
@@ -106,7 +113,6 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
             users.add(usr);
         }
         db.close();
-        return users;
     }
 
     //Delete data from the table for the given id
@@ -142,13 +148,43 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean usernameAndPasswordCheck(String username, String password){
-        String realPassword;
-        //search username
-
-        //check usernames password
-        if(password.matches(realPassword)){
-            return true;
+        users = new ArrayList<>();
+        updateUsers();
+        for(User x: users ){
+            if(x.getUsername().equals(username)){
+                if(x.getPassword().equals(password)) {
+                    User.currentUser = x;
+                    return true;
+                }
+            }
         }
-        else return false;
+        return false;
     }
+
+    public boolean usedMailTest(String mail){
+        if(users.size() == 0){
+            users = new ArrayList<>();
+            updateUsers();
+        }
+        for(User x: users ){
+            if(x.getEmail().equals(mail)){
+                    return true;
+                }
+            }
+        return false;
+    }
+
+    public boolean usedUsernameTest(String username){
+            if(users.size() == 0){
+                users = new ArrayList<>();
+                updateUsers();
+            }
+            for(User x: users ){
+                if(x.getUsername().equals(username)){
+                    return true;
+                }
+            }
+            return false;
+    }
+
 }

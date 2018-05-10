@@ -9,8 +9,9 @@
     public class User implements UniversalData {
 
         int id;
-        public User currentUser;
+        public static User currentUser;
         String username;
+        String email;
         String password;
         String homeCountry;
         String name;
@@ -35,8 +36,9 @@
             ndbh = new NoteDataBaseHelper( context );
         }
 
-        public User( String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination,  Context context)
+        public User( String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination,  Context context, String email)
         {
+            this.email = email;
             this.username = username;
             this.password = password;
             this.homeCountry = homeCountry;
@@ -196,7 +198,11 @@
             return motherLanguage;
         }
 
-        public long addNote( String note )
+        public String getEmail() {
+            return email;
+        }
+
+        public long addNote(String note )
         {
             return ndbh.insertNote(note);
         }
@@ -226,12 +232,8 @@
             return ndbh;
         }
 
-        public void setCurrentUser(User user){
+        public static void setCurrentUser(User user){
             currentUser = user;
-        }
-
-        public User getCurrentUser(){
-            return currentUser;
         }
 
     }

@@ -78,11 +78,13 @@ public class RegisterSecondScreen extends AppCompatActivity implements AdapterVi
                     Toast.makeText(this, "Please type your surname", Toast.LENGTH_LONG).show();
                 }
                 else{
+                    nameStr = name.getText().toString();
+                    surnameStr = surname.getText().toString();
                     String targetLanguage = demoTargetLanguage();
                     String destination = demoDestination();
                     User newUser = new User(username,password,homeCountryStr,nameStr,surnameStr,languageStr,targetLanguage,destination,this);
+                    System.out.print(newUser.getName());
                     db.insertData(newUser);
-
                     Intent login = new Intent(this, Login.class);
                     startActivity(login);
                 }
