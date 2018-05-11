@@ -26,7 +26,6 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
-
         db = new UserDatabaseHelper(this);
         continueButton = (Button) findViewById(R.id.continueButton);
         typeMail = (EditText) findViewById(R.id.email);
@@ -48,16 +47,20 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(this,"This mail has not used yet!", Toast.LENGTH_LONG).show();
             }
             else{
-                sendEmail();
-                Intent typeCode = new Intent(this, TypeTheCode.class);
-                typeCode.putExtra("savecode",saveCode);
-                typeCode.putExtra("mail",typeMail.getText().toString());
-                startActivity(typeCode);
+                saveCode = passwordResetCode();
+                sendEmail(saveCode);
+                Toast.makeText(this,saveCode, Toast.LENGTH_LONG).show();
+                /*
+                Intent TypeCode = new Intent(this, TypeTheCode.class);
+                TypeCode.putExtra("saveCode",saveCode);
+                TypeCode.putExtra("mail",typeMail.getText().toString());
+                startActivity(TypeCode);
+                */
             }
         }
     }
 
-    protected void sendEmail() {
+    protected void sendEmail(final String passCode) {
         final ProgressDialog dialog = new ProgressDialog(ResetPassword.this);
         dialog.setTitle("Sending Email");
         dialog.setMessage("Please wait");
@@ -66,9 +69,10 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
             @Override
             public void run() {
                 try {
+                    passwordResetCode();
                     GMailSender sender = new GMailSender("travelsurvivalunitapp@gmail.com", "TsUnit123");
                     sender.sendMail("Reset Password",
-                            passwordResetCode(),
+                            "Your save code for your favorite app is "+ passCode + " . Have a nice day!",
                             "travelsurvivalunitapp@gmail.com",
                             typeMail.getText().toString());
                     dialog.dismiss();
@@ -86,8 +90,8 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
         return cm.getActiveNetworkInfo() != null;
     }
 
-    protected String passwordResetCode(){
-        String CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    public String passwordResetCode(){
+        String CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZqwertyuıopilkjhgfdsazxcvbnm1234567890";
         StringBuilder code = new StringBuilder();
         Random rnd = new Random();
         while (code.length() < 8) { // length of the random string.
@@ -95,7 +99,7 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
             code.append(CHARS.charAt(index));
         }
         saveCode = code.toString();
-        return "Your save code for your favorite app is "+saveCode + " . Have a nice day!";
+        return saveCode;
     }
 
 }
