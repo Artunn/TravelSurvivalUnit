@@ -26,6 +26,8 @@
     <string name="name_surname">null pointers</string>
     <string name="translation_dir">english - turkish</string>
     <string name="country">turkey</string>
+    <string name="traditions_menu">TRADITIONS</string>
+    <string name="tradition_order">1</string>
     <string-array name="language_array">
         <item>Türkçe</item>
         <item>English</item>
@@ -38,6 +40,4 @@
         <item>France</item>
         <item>Germany</item>
     </string-array>
-    <string name="traditions_menu">TRADITIONS</string>
-    <string name="tradition_order">1</string>
 </resources>
