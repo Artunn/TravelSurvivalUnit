@@ -6,12 +6,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.example.asusnb.travelsurvivalunit.User;
 
 public class UserDatabaseHelper extends SQLiteOpenHelper {
     private static int DATABASE_VERSION = 1;
-    private static String DB_FILE_NAME = "user";
+    private static String DB_FILE_NAME = "userInfoDB";
+
+    //PRIVATE YAPILACAK. TEST İÇİN DEFAULT
+    private static ArrayList<User> users;
+
 
     public UserDatabaseHelper(Context context) {
         super(context, DB_FILE_NAME, null, DATABASE_VERSION);
@@ -22,16 +28,17 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE user_info ( " +
                 " id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                " username VARCHAR2(30), " +
+                " username VARCHAR2(30)," +
                 " password VARCHAR2(20)," +
                 " homeCountry VARCHAR2(20)," +
                 " name VARCHAR2 (30)," +
-                " surname VARCHAR(30)," +
+                " surname VARCHAR2(30)," +
                 " avatarId INTEGER," +
                 " count INTEGER," +
                 " motherLanguage VARCHAR(30)," +
                 " targetLanguage VARCHAR(30)," +
-                " destination VARCHAR(30))";
+                " destination VARCHAR(30)," +
+                " email VARCHAR(30) )";
         db.execSQL(sql);
     }
 
@@ -46,8 +53,8 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Insert data into table
     public void insertData(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
-        SQLiteStatement stmt = db.compileStatement("INSERT INTO user_info (username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination) "
-                + "VALUES (?,?,?,?)");
+        SQLiteStatement stmt = db.compileStatement("INSERT INTO user_info (username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email) "
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?)");
         stmt.bindString(1, user.getUsername());
         stmt.bindString(2, user.getPassword());
         stmt.bindString(3, user.getHomeCountry());
@@ -58,6 +65,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         stmt.bindString(8, user.getMotherLanguage());
         stmt.bindString(9, user.getTargetLanguage());
         stmt.bindString(10, user.getDestination());
+        stmt.bindString(11, user.getEmail());
         stmt.execute();
         stmt.close();
         db.close();
@@ -66,7 +74,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Update data into table
     public void updateData(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
-        SQLiteStatement stmt = db.compileStatement("UPDATE student_info SET username=?, password=?, homeCountry=?, name=?, surname=?, avatarId=?, count=?, motherLanguage=?, targetLanguage=?, destination=?" +
+        SQLiteStatement stmt = db.compileStatement("UPDATE user_info SET username=?, password=?, homeCountry=?, name=?, surname=?, avatarId=?, count=?, motherLanguage=?, targetLanguage=?, destination=?, email=?" +
                 "WHERE id = ?");
         stmt.bindString(1, user.getUsername());
         stmt.bindString(2, user.getPassword());
@@ -78,6 +86,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         stmt.bindString(8, user.getMotherLanguage());
         stmt.bindString(9, user.getTargetLanguage());
         stmt.bindString(10, user.getDestination());
+        stmt.bindString(11, user.getEmail());
 
         stmt.execute();
         stmt.close();
@@ -85,10 +94,11 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Select all data from the table
-    public List getUsers() {
-        List users = new ArrayList();
+
+    public void updateUsers() {
+        //users.clear();
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination from user_info ORDER BY id ASC";
+        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email from user_info ORDER BY id ASC";
         Cursor cursor = db.rawQuery(query, null);
         while (cursor.moveToNext()) {
             User usr = new User();
@@ -103,10 +113,10 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
             usr.setMotherLanguage(cursor.getString(8));
             usr.setTargetLanguage(cursor.getString(9));
             usr.setDestination(cursor.getString(10));
+            usr.setEmail(cursor.getString(11));
             users.add(usr);
         }
         db.close();
-        return users;
     }
 
     //Delete data from the table for the given id
@@ -122,7 +132,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Select data for the given id
     public User getUserById(int userId) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination FROM user_info WHERE id = ?";
+        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email FROM user_info WHERE id = ?";
         Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(userId)});
         cursor.moveToFirst();
         User usr = new User();
@@ -137,18 +147,58 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         usr.setMotherLanguage(cursor.getString(8));
         usr.setTargetLanguage(cursor.getString(9));
         usr.setDestination(cursor.getString(10));
+        usr.setEmail(cursor.getString(11));
         db.close();
         return usr;
     }
 
     public boolean usernameAndPasswordCheck(String username, String password){
-        String realPassword;
-        //search username
-
-        //check usernames password
-        if(password.matches(realPassword)){
-            return true;
+        users = new ArrayList<>();
+        updateUsers();
+        for(User x: users ){
+            if(x.getUsername().equals(username)){
+                if(x.getPassword().equals(password)) {
+                    User.currentUser = x;
+                    return true;
+                }
+            }
         }
-        else return false;
+        return false;
     }
+
+    public boolean usedMailTest(String mail){
+            users = new ArrayList<>();
+            updateUsers();
+        for(User x: users ){
+            if(x.getEmail().equals(mail)){
+                    return true;
+                }
+            }
+        return false;
+    }
+
+    public boolean usedUsernameTest(String username){
+                users = new ArrayList<>();
+                updateUsers();
+            for(User x: users ){
+                if(x.getUsername().equals(username)){
+                    return true;
+                }
+            }
+            return false;
+    }
+
+    public boolean changePassword(String mail,String password){
+        users = new ArrayList<>();
+        updateUsers();
+        for(User x: users ){
+            if(x.getEmail().equals(mail)){
+                x.setPassword(password);
+                updateData(x);
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

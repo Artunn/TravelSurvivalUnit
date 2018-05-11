@@ -32,7 +32,7 @@
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/country"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/city_main"
             app:layout_constraintTop_toBottomOf="@+id/name_surname_main" />
@@ -63,7 +63,7 @@
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/currency2_str"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/currency_top" />
@@ -78,7 +78,7 @@
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/degree"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/currency_top"
             app:layout_constraintStart_toEndOf="@+id/avatar" />
 
@@ -93,7 +93,7 @@
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/refresh"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/currency_bottom"
             app:layout_constraintTop_toBottomOf="@+id/refresh_button_image" />
@@ -108,7 +108,7 @@
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/city_name"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/avatar"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,7 +124,7 @@
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/translation_dir"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/city_main"
             app:layout_constraintTop_toBottomOf="@+id/country_main" />
@@ -141,7 +141,7 @@
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/name_surname"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/city_main"
             app:layout_constraintTop_toTopOf="parent" />
@@ -156,7 +156,7 @@
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/currency1_str"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/currency_bottom"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/avatar" />

@@ -7,71 +7,11 @@
     android:background="@drawable/background"
     tools:context=".TraditionsActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/back_button_traditions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:onClick="backToMain"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            app:srcCompat="@android:drawable/ic_media_previous" />
-
-        <TextView
-            android:id="@+id/traditions_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/catcafeaccent"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="@string/traditions_menu"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/tradition_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/catcafeaccent"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="@string/tradition_order"
-            android:textSize="24sp" />
-
-        <ImageView
-            android:id="@+id/favourite_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            app:srcCompat="@android:drawable/btn_star_big_off" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
-    </LinearLayout>
+        android:text="TextView"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="81dp" />
 </android.support.constraint.ConstraintLayout>
