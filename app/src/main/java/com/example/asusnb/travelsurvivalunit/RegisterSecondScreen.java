@@ -27,15 +27,14 @@ public class RegisterSecondScreen extends AppCompatActivity implements AdapterVi
 
         db = new UserDatabaseHelper(this);
         language = findViewById(R.id.language);
-        language.setOnItemSelectedListener(this);
         homeCountry = findViewById(R.id.homeCountry);
         homeCountry.setOnItemSelectedListener(this);
         name = findViewById(R.id.name);
         surname = findViewById(R.id.surname);
         register = findViewById(R.id.register);
         register.setOnClickListener(this);
-        username = getIntent().getExtras().getString("username",null);
-        password = getIntent().getExtras().getString("password",null);
+        username = getIntent().getExtras().getString("username",(String) null);
+        password = getIntent().getExtras().getString("password",(String) null);
         email = getIntent().getExtras().getString("email",null);
         ArrayAdapter<CharSequence> languageAdapter = ArrayAdapter.createFromResource(this,
                 R.array.language_array, android.R.layout.simple_spinner_item);

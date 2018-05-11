@@ -57,7 +57,6 @@ public class TranslationPower {
         private Category( String inCategory) {
             categoryName = inCategory;
             subs = new ArrayList<>();
-
         }
     }
 
