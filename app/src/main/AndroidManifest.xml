@@ -16,7 +16,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,10 +23,10 @@
         <activity android:name=".RegisterSecondScreen" />
         <activity android:name=".MainActivity" />
         <activity android:name=".CategoriesPage" />
-        <activity android:name=".ResetPassword" />
+        <activity android:name=".TypeTheCode" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".TraditionsActivity" />
-        <activity android:name=".TypeTheCode" />
+        <activity android:name=".ResetPassword" />
         <activity android:name=".ChangePassword" />
     </application>
 

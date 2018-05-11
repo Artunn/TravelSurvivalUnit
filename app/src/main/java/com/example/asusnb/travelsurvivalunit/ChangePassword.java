@@ -1,7 +1,9 @@
 package com.example.asusnb.travelsurvivalunit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,14 +15,17 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
     Button resetPass;
     String mail;
     UserDatabaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
-        db = new UserDatabaseHelper(this);
+
         newPass1 = (EditText) findViewById(R.id.password);
         newPass2 = (EditText) findViewById(R.id.passwordConfirm);
         resetPass = (Button) findViewById(R.id.resetpassword);
+
+        db = new UserDatabaseHelper(this);
         mail = getIntent().getExtras().getString("mail",null);
 
         resetPass.setOnClickListener(this);
@@ -42,6 +47,8 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
             else{
                 if(db.changePassword(mail,newPass1.getText().toString())){
                     Toast.makeText(this,"SUCCESSFUL",Toast.LENGTH_SHORT).show();
+                    Intent login = new Intent(this, Login.class);
+                    startActivity(login);
                 }
                 else{
                     Toast.makeText(this,"ERROR",Toast.LENGTH_SHORT).show();
