@@ -14,7 +14,7 @@ import java.lang.reflect.Type;
 
 public class TypeTheCode extends AppCompatActivity implements View.OnClickListener {
 
-    String code;
+    String codee;
     String mail;
     EditText codeInput;
     Button continueButton;
@@ -23,11 +23,16 @@ public class TypeTheCode extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type_the_code);
-        code = getIntent().getExtras().getString("savecode",null);
-        mail = getIntent().getExtras().getString("mail",null);
+
         codeInput = (EditText) findViewById(R.id.code);
         continueButton = (Button) findViewById(R.id.continueButton);
-        resend = (Button) findViewById(R.id.button);
+        resend = (Button) findViewById(R.id.resend);
+
+        codee = getIntent().getExtras().getString("saveCode",(String)null);
+        mail = getIntent().getExtras().getString("mail",(String)null);
+
+        Toast.makeText(this,codee,Toast.LENGTH_LONG).show();
+
         resend.setOnClickListener(this);
         continueButton.setOnClickListener(this);
     }
@@ -39,7 +44,7 @@ public class TypeTheCode extends AppCompatActivity implements View.OnClickListen
                 if(codeInput.getText().toString().matches("")){
                     Toast.makeText(this,"Please type the code you get!",Toast.LENGTH_SHORT).show();
                 }
-                else if(!codeInput.getText().toString().equals(code)){
+                else if(!codeInput.getText().toString().equals(codee)){
                     Toast.makeText(this,"Incorrect code!",Toast.LENGTH_SHORT).show();
                 }
                 else{
@@ -57,20 +62,19 @@ public class TypeTheCode extends AppCompatActivity implements View.OnClickListen
     }
 
     protected void sendEmail() {
-        final ProgressDialog dialog = new ProgressDialog(TypeTheCode.this);
-        dialog.setTitle("Sending Email");
-        dialog.setMessage("Please wait");
-        dialog.show();
+        final ProgressDialog dialog2 = new ProgressDialog(TypeTheCode.this);
+        dialog2.setTitle("Sending Email");
+        dialog2.setMessage("Please wait");
+        dialog2.show();
         Thread sender = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     GMailSender sender = new GMailSender("travelsurvivalunitapp@gmail.com", "TsUnit123");
-                    sender.sendMail("Reset Password",
-                            code,
+                    sender.sendMail("Reset Password",codee,
                             "travelsurvivalunitapp@gmail.com",
                             mail);
-                    dialog.dismiss();
+                    dialog2.dismiss();
                 } catch (Exception e) {
                     Log.e("mylog", "Error: " + e.getMessage());
                 }
