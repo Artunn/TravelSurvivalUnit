@@ -9,8 +9,9 @@
     public class User implements UniversalData {
 
         int id;
-        public User currentUser;
+        public static User currentUser;
         String username;
+        String email;
         String password;
         String homeCountry;
         String name;
@@ -35,7 +36,7 @@
             ndbh = new NoteDataBaseHelper( context );
         }
 
-        public User( String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination,  Context context)
+        public User( String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination,  Context context, String email)
         {
             this.username = username;
             this.password = password;
@@ -48,11 +49,12 @@
             this.motherLanguage = motherLanguage;
             this.targetLanguage = targetLanguage;
             this.destination = destination;
+            this.email = email;
             ndbh = new NoteDataBaseHelper( context );
 
         }
 
-        public User ( int id, String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination, Context context ){
+        public User ( int id, String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination, Context context, String email ){
             this.id = id;
             this.username = username;
             this.password = password;
@@ -65,6 +67,7 @@
             this.motherLanguage = motherLanguage;
             this.targetLanguage = targetLanguage;
             this.destination = destination;
+            this.email = email;
             ndbh = new NoteDataBaseHelper(context);
         }
 
@@ -80,6 +83,7 @@
 
         public void setPassword ( String password) { this.password = password; }
 
+        public void setEmail(String email) {this.email = email ;}
         public String getPassword() { return password; }
 
         public void setHomeCountry (String homeCountry)
@@ -196,7 +200,11 @@
             return motherLanguage;
         }
 
-        public long addNote( String note )
+        public String getEmail() {
+            return email;
+        }
+
+        public long addNote(String note )
         {
             return ndbh.insertNote(note);
         }
@@ -226,12 +234,8 @@
             return ndbh;
         }
 
-        public void setCurrentUser(User user){
+        public static void setCurrentUser(User user){
             currentUser = user;
-        }
-
-        public User getCurrentUser(){
-            return currentUser;
         }
 
     }
