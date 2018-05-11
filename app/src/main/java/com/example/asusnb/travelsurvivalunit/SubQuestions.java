@@ -1,10 +1,12 @@
 package com.example.asusnb.travelsurvivalunit;
 
+import java.io.Serializable;
+
 /**
  * Created by User on 10.05.2018.
  */
 
-public class SubQuestions {
+public class SubQuestions implements Serializable {
     String[] question;
     //int category;
     boolean hasSpace;

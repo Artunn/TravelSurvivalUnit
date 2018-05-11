@@ -22,8 +22,9 @@
             android:parentActivityName=".MainActivity"
         </activity>
         <activity android:name=".TraditionsActivity"></activity>
-        <activity android:name=".RegisterSecondScreen"></activity>
-
+        <activity android:name=".RegisterSecondScreen" />
+        <activity android:name=".CategoriesPage"></activity>
+        <activity android:name=".Subs"></activity>
     </application>
 
 </manifest>

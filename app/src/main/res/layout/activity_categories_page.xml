@@ -24,67 +24,67 @@
     app:layout_constraintStart_toStartOf="parent">
 
     <Button
-        android:id="@+id/c1"
+        android:id="@+id/transportation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:background="#32ffffff"
-        android:text="@string/"
+        android:onClick="c1"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/c2"
+        android:id="@+id/accomodation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:background="#32ffffff"
-        android:text="@string/traditions_button_text"
+        android:onClick="c2"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/c3"
+        android:id="@+id/restaurant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:background="#32ffffff"
-        android:text="@string/fun_facts_button_text"
+        android:onClick="c3"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/c4"
+        android:id="@+id/shopping"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:background="#32ffffff"
-        android:text="@string/world_clock_button_text"
+        android:onClick="c4"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/c5"
+        android:id="@+id/daily"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:background="#32ffffff"
-        android:text="@string/settings_button_text"
+        android:onClick="c5"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/c6"
+        android:id="@+id/emergency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:background="#32ffffff"
-        android:text="@string/favourites_button_text"
+        android:onClick="c6"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />

@@ -141,14 +141,4 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         return usr;
     }
 
-    public boolean usernameAndPasswordCheck(String username, String password){
-        String realPassword;
-        //search username
-
-        //check usernames password
-        if(password.matches(realPassword)){
-            return true;
-        }
-        else return false;
-    }
 }
