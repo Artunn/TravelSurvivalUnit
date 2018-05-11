@@ -22,7 +22,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-
 public class XMLMap {
     // All static variables
     private static final String URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
@@ -32,7 +31,7 @@ public class XMLMap {
     private static final String KEY_RATE = "rate";
     private XMLParser parser;
     private NodeList nodeList;
-    HashMap<String, String> map;
+    private HashMap<String, Double> map;
 
 
     public XMLMap(){
@@ -43,7 +42,7 @@ public class XMLMap {
 
         nodeList = doc.getElementsByTagName( KEY_ITEM);
         // creating new HashMap
-        map = new HashMap<String, String>();
+        map = new HashMap<String, Double>();
 
         // looping through all item nodes <item>
         for (int i = 0; i < nodeList.getLength(); i++) {
@@ -51,11 +50,13 @@ public class XMLMap {
             String currencyName = e.getAttribute(KEY_CURRENCY);
             String currencyValue = e.getAttribute(KEY_RATE);
             // adding each child node to HashMap key => value
-            map.put( currencyName, currencyValue);
+            map.put( currencyName, Double.parseDouble(currencyValue));
             //Log.e("after", currencyValue + "");
         }
+    }
 
-        //map.get( "GBP");
+    public HashMap<String, Double> getMap() {
+        return map;
     }
 
     class XMLParser {
