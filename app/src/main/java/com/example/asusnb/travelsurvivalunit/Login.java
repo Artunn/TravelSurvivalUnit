@@ -37,7 +37,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         auth = FirebaseAuth.getInstance();
 
-        backgroundTsu = (ImageView) findViewById(R.id.backgroundTsu);
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.passwordConfirm);
         rememberMe = (CheckBox) findViewById(R.id.rememberMe);
