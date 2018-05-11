@@ -1,11 +1,15 @@
     package com.example.asusnb.travelsurvivalunit;
     import java.util.ArrayList;
+
+    //package com.example.asusnb.travelsurvivalunit;
+    import java.util.ArrayList;
     import android.content.Context;
     import java.util.List;
 
     public class User implements UniversalData {
 
         int id;
+        public User currentUser;
         String username;
         String password;
         String homeCountry;
@@ -18,7 +22,7 @@
         String targetLanguage;
         String destination;
         NoteDataBaseHelper ndbh;
-        //int backround;
+        //int background;
         //int count2;
 
 
@@ -31,7 +35,7 @@
             ndbh = new NoteDataBaseHelper( context );
         }
 
-        public User( String username, String password, String homeCountry, String name, String surname, String motherLanguage, String targetLanguage, String destination,  Context context  )
+        public User( String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination,  Context context)
         {
             this.username = username;
             this.password = password;
@@ -137,7 +141,7 @@
 
         public void setCount( int count )
         {
-           this.count = count;
+            this.count = count;
         }
 
         public void increaseCount()
@@ -194,7 +198,7 @@
 
         public long addNote( String note )
         {
-            return ndbh.insertNote( note);
+            return ndbh.insertNote(note);
         }
 
         public Note getNote( long id )
@@ -222,6 +226,12 @@
             return ndbh;
         }
 
+        public void setCurrentUser(User user){
+            currentUser = user;
+        }
 
+        public User getCurrentUser(){
+            return currentUser;
+        }
 
     }

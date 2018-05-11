@@ -1,23 +1,23 @@
 package com.example.asusnb.travelsurvivalunit;
 
-        import android.app.AlertDialog;
-        import android.content.DialogInterface;
-        import android.content.Intent;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.ImageView;
-        import android.widget.TextView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    UserInfo artun;
+    User artun;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        artun = new UserInfo("topistan", "artunn", "artun","cura");
+        artun = new User("artunn", "1234", "bursa", "artun", "cura", "English", "Turkish", "Turkey", null);
     }
     public void optionTheme(View view) {
         String[] listItems = new String[] {"item1","item2"};

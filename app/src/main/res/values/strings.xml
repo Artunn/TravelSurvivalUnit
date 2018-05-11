@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Travel Survival Unit</string>
-    <string name="CREATE_AN_ACCOUNT"><u>Create an account</u></string>
-    <string name="RESET_PASSWORD"><u>Reset Password</u></string>
-    <string name="CONTINUE_WITHOUT_REGISTRATION"><u>Continue Without Registration</u></string>
+    <string name="app_name" translatable="false">Travel Survival Unit</string>
+    <string name="create_an_account"><u>Create an account</u></string>
+    <string name="reset_password"><u>Reset Password</u></string>
+    <string name="continue_without_registration"><u>Continue Without Registration</u></string>
     <string name="password">password</string>
     <string name="settingsName">name : null</string>
     <string name="settingsSurname">surname : pointers</string>
@@ -21,8 +21,22 @@
     <string name="degree">4\u00b0 C</string>
     <string name="currency1_str">1 GBP = 5.5301 TRY</string>
     <string name="currency2_str">1 TRY = 0.1808 GBP</string>
-    <string name="last_retrieved">Last retrieved 3 days ago</string>
+    <string name="last_retrieved_beg">Last retrieved</string>
+    <string name="last_retrieved_end">days ago</string>
     <string name="name_surname">null pointers</string>
     <string name="translation_dir">english - turkish</string>
     <string name="country">turkey</string>
+    <string-array name="language_array">
+        <item>Türkçe</item>
+        <item>English</item>
+        <item>Français</item>
+        <item>Deutsche</item>
+    </string-array>
+    <string-array name="country_array">
+        <item>Türkiye</item>
+        <item>England</item>
+        <item>France</item>
+        <item>Germany</item>
+    </string-array>
+
 </resources>
