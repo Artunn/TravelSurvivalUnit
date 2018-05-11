@@ -10,7 +10,7 @@ public class Collections {
     public Collections(){
         countries = new HashMap<String, String>();
         countries.put("Turkey", "TRY");
-        countries.put("London", "GBP");
+        countries.put("England", "GBP");
     }
 
     //methods
