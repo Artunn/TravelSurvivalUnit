@@ -22,20 +22,25 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+/**
+ * __XMLMap class to parse the currency data and place them in a HashMap___
+ * @author __Ayşe Ezgi Yavuz ___
+ * @version __11.05.2018__
+ */
 public class XMLMap {
-    // All static variables
+    // properties
+    // XML URL to be parsed
     private static final String URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
     // XML node keys
     private static final String KEY_ITEM = "Cube"; // parent node
     private static final String KEY_CURRENCY = "currency";
     private static final String KEY_RATE = "rate";
-    private XMLParser parser;
+    private XMLParser parser; //reference for the inner class XMLParser
     private NodeList nodeList;
     private HashMap<String, Double> map;
 
-
+    // constructor
     public XMLMap(){
-
         parser = new XMLParser();
         String xml = parser.getXmlFromUrl(URL); // getting XML
         Document doc = parser.getDomElement(xml); // getting DOM element
@@ -44,32 +49,36 @@ public class XMLMap {
         // creating new HashMap
         map = new HashMap<String, Double>();
 
-        // looping through all item nodes <item>
+        // looping through all item nodes
         for (int i = 0; i < nodeList.getLength(); i++) {
             Element e = (Element) nodeList.item(i);
             String currencyName = e.getAttribute(KEY_CURRENCY);
             String currencyValue = e.getAttribute(KEY_RATE);
             // adding each child node to HashMap key => value
             map.put( currencyName, Double.parseDouble(currencyValue));
-            //Log.e("after", currencyValue + "");
         }
     }
-
+    // methods
     public HashMap<String, Double> getMap() {
         return map;
     }
 
-    class XMLParser {
+    /**
+     * __XMLParser class to convert to given URL to a doc format___
+     * @author __Ayşe Ezgi Yavuz ___
+     * @version __11.05.2018__
+     */
+    private class XMLParser {
         // constructor
         private XMLParser() {
         }
 
         /**
          * Getting XML from URL making HTTP request
-         *
-         * @param url string
+         * @param url String
+         * @return xml String
          */
-        String getXmlFromUrl( String url){
+        private String getXmlFromUrl( String url){
             String xml;
             // defaultHttpClient
             DefaultHttpClient httpClient;
@@ -96,8 +105,10 @@ public class XMLMap {
 
         /**
          * Getting XML DOM element
+         * @param xml String
+         * @return doc Document
          */
-        Document getDomElement( String xml){
+        private Document getDomElement( String xml){
             Document doc;
             DocumentBuilderFactory dbf;
             DocumentBuilder db;
