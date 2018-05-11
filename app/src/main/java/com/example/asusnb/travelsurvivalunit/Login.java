@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         db = new UserDatabaseHelper(this);
-        guest = new User("TSU","","","Guest","User","","","",this);
+        guest = new User("TSU","","","Guest","User","","","",this,"noMail@gmail.com");
         auth = FirebaseAuth.getInstance();
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.passwordConfirm);
@@ -57,6 +57,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.login:
                 if(username.getText().toString().matches("")){
                     Toast.makeText(this,"Please enter your username",Toast.LENGTH_LONG).show();
+                    User sdfsd = new User("a","a","a","a","a","a","a","a",this  ,"a");
+                    db.insertData(sdfsd);
                 }
                 else if(password.getText().toString().matches("")){
                     Toast.makeText(this,"Please enter your password",Toast.LENGTH_LONG);
@@ -77,6 +79,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                      if(db.usernameAndPasswordCheck(username.getText().toString(),password.getText().toString()))
                      {
+                         System.out.print("SADASF");
                          Toast.makeText(this,"You successfully logged in "+ User.currentUser.getName(),Toast.LENGTH_SHORT).show();
                          Intent mainMenu = new Intent(this,MainActivity.class);
                          startActivity(mainMenu);

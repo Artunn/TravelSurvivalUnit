@@ -82,7 +82,7 @@ public class RegisterSecondScreen extends AppCompatActivity implements AdapterVi
                     surnameStr = surname.getText().toString();
                     String targetLanguage = demoTargetLanguage();
                     String destination = demoDestination();
-                    User newUser = new User(username,password,homeCountryStr,nameStr,surnameStr,languageStr,targetLanguage,destination,this);
+                    User newUser = new User(username,password,homeCountryStr,nameStr,surnameStr,languageStr,targetLanguage,destination,this,email);
                     System.out.print(newUser.getName());
                     db.insertData(newUser);
                     Intent login = new Intent(this, Login.class);
