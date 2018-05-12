@@ -12,8 +12,12 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*
         City cityToUse;
         User userToUse;
+
+        cityToUse =
+        */
     }
 
     public void openSettings(View view) {
