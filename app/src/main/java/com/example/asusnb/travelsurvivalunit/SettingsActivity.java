@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,11 +16,8 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_settings);
+        setContentView(R.layout.activity_settings);
         artun = new User("artunn", "1234", "bursa", "artun", "cura", "English", "Turkish", "Turkey", null);
-
-        TextView x = findViewById( R.id.textView7);
-        x.setText("destination " + artun.destination);
     }
     public void optionTheme(View view) {
         String[] listItems = new String[] {"item1","item2"};

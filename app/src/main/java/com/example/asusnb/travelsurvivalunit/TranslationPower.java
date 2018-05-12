@@ -66,7 +66,6 @@ public class TranslationPower implements Serializable {
         private Category( String inCategory) {
             categoryName = inCategory;
             subs = new ArrayList<>();
-
         }
         public ArrayList<SubQuestions> getSubs() {
             return subs;

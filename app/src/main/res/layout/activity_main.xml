@@ -156,6 +156,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
@@ -186,18 +187,6 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/fun_facts_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:background="#32ffffff"
-            android:fontFamily="@font/catcafeaccent"
-            android:text="@string/fun_facts_button_text"
-            android:textAllCaps="false"
-            android:textColor="@android:color/background_light"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/world_clock_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -205,6 +194,18 @@
             android:background="#32ffffff"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/world_clock_button_text"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/fun_facts_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="#32ffffff"
+            android:fontFamily="@font/catcafeaccent"
+            android:text="@string/fun_facts_button_text"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
             android:textSize="24sp" />

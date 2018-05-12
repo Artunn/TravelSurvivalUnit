@@ -1,4 +1,5 @@
-/*import android.util.Log;
+package com.example.asusnb.travelsurvivalunit;
+import android.util.Log;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -21,103 +22,117 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-
+/**
+ * __XMLMap class to parse the currency data and place them in a HashMap___
+ * @author __Ayşe Ezgi Yavuz ___
+ * @version __11.05.2018__
+ */
 public class XMLMap {
-    // All static variables
-    static final String URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
+    // properties
+    // XML URL to be parsed
+    private static final String URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
     // XML node keys
-    static final String KEY_ITEM = "Cube"; // parent node
-    static final String KEY_CURRENCY = "currency";
-    static final String KEY_RATE = "rate";
-    XMLParser parser;
-    NodeList n1;
-    HashMap<String, String> map;
-
-
-    String xml = parser.getXmlFromUrl(URL); // getting XML
-    Document doc = parser.getDomElement(xml); // getting DOM element
-
-    n1 = doc.getElementsByTagName( KEY_ITEM);
-    // creating new HashMap
-    map = new HashMap<String, String>();
-
-    // looping through all item nodes <item>
-    for (int i = 0; i < nl.getLength(); i++) {
-        Element e = (Element) nl.item(i);
-        String currencyName = e.getAttribute(KEY_CURRENCY);
-        String currencyValue = e.getAttribute(KEY_RATE);
-        // adding each child node to HashMap key => value
-        map.put( currencyName, currencyValue);
-        //Log.e("after", currencyValue + "");
-    }
-
-}
-
-
-class XMLParser {
+    private static final String KEY_ITEM = "Cube"; // parent node
+    private static final String KEY_CURRENCY = "currency";
+    private static final String KEY_RATE = "rate";
+    private XMLParser parser; //reference for the inner class XMLParser
+    private NodeList nodeList;
+    private HashMap<String, Double> map;
 
     // constructor
-    public XMLParser() {
+    public XMLMap(){
+        parser = new XMLParser();
+        String xml = parser.getXmlFromUrl(URL); // getting XML
+        Document doc = parser.getDomElement(xml); // getting DOM element
 
+        nodeList = doc.getElementsByTagName( KEY_ITEM);
+        // creating new HashMap
+        map = new HashMap<String, Double>();
+
+        // looping through all item nodes
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Element e = (Element) nodeList.item(i);
+            String currencyName = e.getAttribute(KEY_CURRENCY);
+            String currencyValue = e.getAttribute(KEY_RATE);
+            // adding each child node to HashMap key => value
+            map.put( currencyName, Double.parseDouble(currencyValue));
+        }
+    }
+    // methods
+    public HashMap<String, Double> getMap() {
+        return map;
     }
 
     /**
-     * Getting XML from URL making HTTP request
-     *
-     * @param url string
+     * __XMLParser class to convert to given URL to a doc format___
+     * @author __Ayşe Ezgi Yavuz ___
+     * @version __11.05.2018__
      */
-/*
-    public String getXmlFromUrl(String url) {
-        String xml = null;
+    private class XMLParser {
+        // constructor
+        private XMLParser() {
+        }
 
-        try {
+        /**
+         * Getting XML from URL making HTTP request
+         * @param url String
+         * @return xml String
+         */
+        private String getXmlFromUrl( String url){
+            String xml;
             // defaultHttpClient
-            DefaultHttpClient httpClient = new DefaultHttpClient();
-            HttpPost httpPost = new HttpPost(url);
+            DefaultHttpClient httpClient;
+            HttpPost httpPost;
+            HttpResponse httpResponse;
+            HttpEntity httpEntity;
 
-            HttpResponse httpResponse = httpClient.execute(httpPost);
-            HttpEntity httpEntity = httpResponse.getEntity();
-            xml = EntityUtils.toString(httpEntity);
-
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        // return XML
-        return xml;
-    }
-
-    /**
-     * Getting XML DOM element
-     */
-/*
-    public Document getDomElement(String xml) {
-        Document doc = null;
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        try {
-
-            DocumentBuilder db = dbf.newDocumentBuilder();
-
-            InputSource is = new InputSource();
-            is.setCharacterStream(new StringReader(xml));
-            doc = db.parse(is);
-
-        } catch (ParserConfigurationException e) {
-            Log.e("Error: ", e.getMessage());
-            return null;
-        } catch (SAXException e) {
-            Log.e("Error: ", e.getMessage());
-            return null;
-        } catch (IOException e) {
-            Log.e("Error: ", e.getMessage());
-            return null;
+            xml = null;
+            try {
+                httpClient = new DefaultHttpClient();
+                httpPost = new HttpPost(url);
+                httpResponse = httpClient.execute(httpPost);
+                httpEntity = httpResponse.getEntity();
+                xml = EntityUtils.toString(httpEntity);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return xml;
         }
 
-        return doc;
+        /**
+         * Getting XML DOM element
+         * @param xml String
+         * @return doc Document
+         */
+        private Document getDomElement( String xml){
+            Document doc;
+            DocumentBuilderFactory dbf;
+            DocumentBuilder db;
+            InputSource is;
+
+            dbf = DocumentBuilderFactory.newInstance();
+            try {
+
+                db = dbf.newDocumentBuilder();
+                is = new InputSource();
+                is.setCharacterStream(new StringReader(xml));
+                doc = db.parse(is);
+
+            } catch (ParserConfigurationException e) {
+                Log.e("Error: ", e.getMessage());
+                return null;
+            } catch (SAXException e) {
+                Log.e("Error: ", e.getMessage());
+                return null;
+            } catch (IOException e) {
+                Log.e("Error: ", e.getMessage());
+                return null;
+            }
+            return doc;
+        }
     }
 }
-}
-*/
