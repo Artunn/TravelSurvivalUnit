@@ -41,7 +41,7 @@ public class City{
         this.cityName = cityName;
         this.country = country;
         lastRetrieved = new GregorianCalendar( TimeZone.getTimeZone( cityName));
-        tradFFAncCurrency = new Collections();
+        //tradFFAncCurrency = new Collections( cityName, country, destination);
         //this.music = music;
         cityCurrency = new Currency();
         backgroundId = cityBackgrounds[count];
