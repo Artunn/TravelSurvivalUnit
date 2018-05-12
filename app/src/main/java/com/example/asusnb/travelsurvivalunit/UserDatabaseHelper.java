@@ -1,6 +1,6 @@
 package com.example.asusnb.travelsurvivalunit;
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
