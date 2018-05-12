@@ -13,8 +13,10 @@ public class Collections {
     static HashMap<String, String> countries;
     HashMap<String, String> cityTrad;
     HashMap<String, String> cityFF;
-    ArrayList<String> traditions;
-    ArrayList<String> funFacts;
+    static ArrayList<String> traditions;
+    static ArrayList<String> funFacts;
+    static int traditionNo = 1;
+    static int funFactNo = 1;
 
     //constructor
     public Collections( Context context) {
@@ -51,9 +53,12 @@ public class Collections {
         public void addCountry(String countryName, String countryCurr){
             countries.put(countryName, countryCurr);
         }
+
         public String getCurrency (String country){
             return countries.get(country);
         }
+
+        public String getNextTradition() {return traditions.get(traditionNo++);}
 //    private void setFF(){
 //        InputStream is = context.getAssets().open("subquestions");
 //        Scanner scan = new Scanner( is);
