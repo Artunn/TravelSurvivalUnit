@@ -4,11 +4,12 @@ import android.content.Context;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Collections {
+public class Collections implements Serializable {
     //properties
     static HashMap<String, String> countries;
     HashMap<String, String> cityTrad;

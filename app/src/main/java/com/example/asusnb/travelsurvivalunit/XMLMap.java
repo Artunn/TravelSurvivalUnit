@@ -14,6 +14,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ import javax.xml.parsers.ParserConfigurationException;
  * @author __Ayşe Ezgi Yavuz ___
  * @version __11.05.2018__
  */
-public class XMLMap {
+public class XMLMap implements Serializable {
     // properties
     // XML URL to be parsed
     private static final String URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
