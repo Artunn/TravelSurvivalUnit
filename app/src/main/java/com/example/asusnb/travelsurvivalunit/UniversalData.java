@@ -1,19 +1,23 @@
      package com.example.asusnb.travelsurvivalunit;
 
      public interface UniversalData {
+         // avatars
           Integer[] myAvatarsId = { R.drawable.avatar1, R.drawable.avatar2};
 
-          final int TRANSPORTATION = 0;
-          final int ACCODOMATION = 1;
-          final int RESTAURANT = 2;
-          final int SHOPPING = 3;
-          final int DAILY = 4;
-          final int EMERGENCY = 5;
-          final String[][] CATEGORIES = {{"transportation","ulaşım"},{"accommodation","konaklama"},
+          // translation
+          int TRANSPORTATION = 0;
+          int ACCODOMATION = 1;
+          int RESTAURANT = 2;
+          int SHOPPING = 3;
+          int DAILY = 4;
+          int EMERGENCY = 5;
+          String[][] CATEGORIES = {{"transportation","ulaşım"},{"accommodation","konaklama"},
                   {"restaurant","restoran"}
                   ,{"shopping","alış-veriş"},{"daily","günlük"},{"emergency","acil"}};
+          String[][] English= { {"Where is the bus stop", "How can I go to..."}, {"Do you have any room for tonight?", "Is breakfast included?"} };
+          String[][] Turkish =  { {"Otobüs durağı nerede?", "...'ya nasıl gidebilirim?"}, {"Bu akşam için odanız var mı?", "Kahvaltı dahil mi?"}};
 
-          final String[][] English= { {"Where is the bus stop", "How can I go to..."}, {"Do you have any room for tonight?", "Is breakfast included?"} };
-          final String[][] Turkish =  { {"Otobüs durağı nerede?", "...'ya nasıl gidebilirim?"}, {"Bu akşam için odanız var mı?", "Kahvaltı dahil mi?"}};
-
+          // cities
+         City london = new City ("London", "England");
+         City istanbul = new City ("Istanbul", "Turkey");
      }
