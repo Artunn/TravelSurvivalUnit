@@ -11,7 +11,7 @@ import java.util.TimeZone;
  */
 public class City{
     // properties
-    final int[] cityBackgrounds = {};
+    final int[] cityBackgrounds = {}; //
     String cityName;
     String country;
     Collections tradFFAncCurrency;
@@ -148,10 +148,20 @@ public class City{
     private void updateWeather( Image weather) {
         this.weather = weather;
     }
+
+    /**
+     * Updates the conversion rate of the currency
+     * @param destination String
+     */
     private void updateRate( String destination){
         currencyRate = cityCurrency.convertFromTo( tradFFAncCurrency.countries, tradFFAncCurrency.getCurrency( country),
                 tradFFAncCurrency.getCurrency( destination));
     }
+
+    /**
+     * Orders calender as day/month/year/hour/min
+     * @return lastRetrievedArray int[]
+     */
     private int[] updateLastRetrieved(){
         int [] lastRetrievedArray;
         lastRetrievedArray = new int[ 5];
