@@ -32,4 +32,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent (this, FunFactsActivity.class);
         startActivity (intent);
     }
+
+    public void openFavourites (View view) {
+        Intent intent = new Intent (this, MyFavouritesActivity.class);
+        startActivity (intent);
+    }
 }

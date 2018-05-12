@@ -31,7 +31,8 @@
         <activity android:name=".SubWithSpace" />
         <activity android:name=".Subs" />
         <activity android:name=".ChangePassword" />
-        <activity android:name=".FunFactsActivity"></activity>
+        <activity android:name=".FunFactsActivity" />
+        <activity android:name=".MyFavouritesActivity"></activity>
     </application>
 
 </manifest>
