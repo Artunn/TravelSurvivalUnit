@@ -42,28 +42,32 @@ public class RegisterSecondScreen extends AppCompatActivity implements AdapterVi
         language.setAdapter(languageAdapter);
 
 
-
         ArrayAdapter<CharSequence> countryAdapter = ArrayAdapter.createFromResource(this,
                 R.array.country_array, android.R.layout.simple_spinner_item);
         countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         homeCountry.setAdapter(countryAdapter);
+
+        homeCountry.setOnItemSelectedListener(this);
+        language.setOnItemSelectedListener(this);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (parent.getId()) {
             case R.id.language:
-                languageStr = parent.getSelectedItem().toString();
+                languageStr = language.getSelectedItem().toString();
+                System.out.println(languageStr + "x");
                 break;
 
             case R.id.homeCountry:
-                homeCountryStr = parent.getSelectedItem().toString();
+                homeCountryStr = homeCountry.getSelectedItem().toString();
                 break;
         }
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
+        languageStr = language.getItemAtPosition(0).toString();
+        homeCountryStr = homeCountry.getItemAtPosition(0).toString();
     }
 
     @Override
@@ -92,6 +96,7 @@ public class RegisterSecondScreen extends AppCompatActivity implements AdapterVi
     }
 
     public String demoTargetLanguage(){
+        System.out.println(languageStr + " X ");
         if(languageStr.matches("Türkçe")){
             return "England";
         }

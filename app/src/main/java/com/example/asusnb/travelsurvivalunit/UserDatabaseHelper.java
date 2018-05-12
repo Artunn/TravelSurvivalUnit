@@ -186,9 +186,13 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         users = new ArrayList<>();
         updateUsers();
         for(User x: users ){
+            System.out.println(x.getUsername());
             if(x.getEmail().equals(mail)){
+                System.out.println("aıjaofıjaoıa");
                 x.setPassword(password);
                 updateData(x);
+                updateUsers();
+                x.getPassword();
                 return true;
             }
         }
