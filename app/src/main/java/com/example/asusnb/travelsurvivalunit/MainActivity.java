@@ -22,4 +22,14 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent (this, TraditionsActivity.class);
         startActivity (intent);
     }
+
+    public void openTranslation (View view) {
+        Intent intent = new Intent (this, CategoriesPage.class);
+        startActivity (intent);
+    }
+
+    public void openFunFacts (View view) {
+        Intent intent = new Intent (this, FunFactsActivity.class);
+        startActivity (intent);
+    }
 }

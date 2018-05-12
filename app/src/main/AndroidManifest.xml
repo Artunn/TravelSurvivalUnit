@@ -28,6 +28,8 @@
         <activity android:name=".SettingsActivity" />
         <activity android:name=".TraditionsActivity" />
         <activity android:name=".ResetPassword" />
+        <activity android:name=".SubWithSpace" />
+        <activity android:name=".Subs" />
         <activity android:name=".ChangePassword" />
         <activity android:name=".FunFactsActivity"></activity>
     </application>
