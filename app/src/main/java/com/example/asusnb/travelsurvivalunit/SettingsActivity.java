@@ -17,7 +17,9 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        artun = new User("artunn", "1234", "bursa", "artun", "cura", "English", "Turkish", "Turkey", null);
+        artun = new User("artunn", "1234", "bursa", "artun",
+                "cura", "English", "Turkish", "Turkey",
+                null,"MAIL");
     }
     public void optionTheme(View view) {
         String[] listItems = new String[] {"item1","item2"};
@@ -36,26 +38,24 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void changeAvatarNext(View view) {
         TextView text;
-        ImageView david;
+        ImageView imageView;
         int image;
 
         text = findViewById( R.id.textView);
-        david = findViewById( R.id.avatarImage);
-        //getDrawable( artun.changeAvatar());
+        imageView = findViewById( R.id.avatarImage);
         image = artun.nextAvatar();
         text.setText( image);
-        david.setImageResource( image);
+        imageView.setImageResource( image);
     }
     public void changeAvatarPrevious(View view) {
         TextView text;
-        ImageView david;
+        ImageView imageView;
         int image;
 
         text = findViewById( R.id.textView);
-        david = findViewById( R.id.avatarImage);
-        //getDrawable( artun.changeAvatar());
+        imageView = findViewById( R.id.avatarImage);
         image = artun.previousAvatar();
         text.setText( image);
-        david.setImageResource( image);
+        imageView.setImageResource( image);
     }
 }

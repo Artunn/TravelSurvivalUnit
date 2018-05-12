@@ -5,11 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
-
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.ArrayList;
 
 public class CategoriesPage extends AppCompatActivity {
 
@@ -20,7 +15,7 @@ public class CategoriesPage extends AppCompatActivity {
     Button dailyButton;
     Button emergencyButton;
     Intent intent;
-    TranslationPower translationPow;
+    TranslationHelper translationHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +36,10 @@ public class CategoriesPage extends AppCompatActivity {
         dailyButton.setText( UniversalData.CATEGORIES[4][0]);
         emergencyButton.setText( UniversalData.CATEGORIES[5][0]);
 
-        translationPow = new TranslationPower( this);
+        translationHelper = new TranslationHelper( this);
 
         intent = new Intent( this, Subs.class);
-        intent.putExtra( "category", translationPow);
+        intent.putExtra( "category", translationHelper);
     }
 
     public void c1(View view) {

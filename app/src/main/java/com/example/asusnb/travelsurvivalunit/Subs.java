@@ -7,19 +7,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class Subs extends AppCompatActivity {
-    ArrayList<SubQuestions> questions;
-    ArrayList<String> hello;
-    ArrayList<String> merhaba;
-    ArrayAdapter<String> hellox;
+    ArrayList<SubQuestion> questions;
+    ArrayList<String> subQuestionsInFirstLanguage;
+    ArrayList<String> getSubQuestionsInSecondLanguage;
+    ArrayAdapter<String> stringAdapter;
     ListView listView;
-    TranslationPower tr;
+    TranslationHelper translationHelper;
     int language;
-    Intent subintent;
+    int selectedCategory;
+    Intent nextPageIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,24 +27,24 @@ public class Subs extends AppCompatActivity {
         setContentView(R.layout.activity_subs);
 
         final Intent intent = getIntent();
-        tr = (TranslationPower) intent.getSerializableExtra("category");
-
-        questions = tr.getSubsx( 0);
+        translationHelper = (TranslationHelper) intent.getSerializableExtra("category");
+        selectedCategory = intent.getIntExtra("categoryNum", 0);
+        questions = translationHelper.getSubsFromHelper( selectedCategory);
         listView = findViewById( R.id.listOfSubs);
 
-        hello = new ArrayList<>();
-        merhaba = new ArrayList<>();
-        for( SubQuestions x : questions) {
-            hello.add( x.question[0]);
-            merhaba.add(x.question[1]);
+        subQuestionsInFirstLanguage = new ArrayList<>();
+        getSubQuestionsInSecondLanguage = new ArrayList<>();
+        for( SubQuestion x : questions) {
+            subQuestionsInFirstLanguage.add( x.question[0]);
+            getSubQuestionsInSecondLanguage.add(x.question[1]);
         }
 
-        hellox = new ArrayAdapter<>( this, android.R.layout.simple_list_item_1,
+        stringAdapter = new ArrayAdapter<>( this, android.R.layout.simple_list_item_1,
                 new ArrayList<String>());
-        hellox.addAll( hello);
+        stringAdapter.addAll( subQuestionsInFirstLanguage);
 
 
-        listView.setAdapter( hellox);
+        listView.setAdapter( stringAdapter);
         listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
 
             @Override
@@ -52,32 +52,32 @@ public class Subs extends AppCompatActivity {
                 System.out.println( questions.get( position).question[0]);
                 if( questions.get(position).space.equals("null") && language == 0) {
 
-                    hellox.clear();
+                    stringAdapter.clear();
                     for( int i = 0; i < position; i++) {
-                        hellox.add( hello.get( i));
+                        stringAdapter.add( subQuestionsInFirstLanguage.get( i));
                     }
-                    hellox.add( merhaba.get(position));
-                    for( int i = position + 1; i < hello.size(); i++) {
-                        hellox.add( hello.get( i));
+                    stringAdapter.add( getSubQuestionsInSecondLanguage.get(position));
+                    for( int i = position + 1; i < subQuestionsInFirstLanguage.size(); i++) {
+                        stringAdapter.add( subQuestionsInFirstLanguage.get( i));
                     }
                 }
                 else if( questions.get(position).space.equals("null") && language == 1) {
 
-                    hellox.clear();
+                    stringAdapter.clear();
                     for( int i = 0; i < position; i++) {
-                        hellox.add( merhaba.get( i));
+                        stringAdapter.add( getSubQuestionsInSecondLanguage.get( i));
                     }
-                    hellox.add( hello.get(position));
-                    for( int i = position + 1; i < merhaba.size(); i++) {
-                        hellox.add( merhaba.get( i));
+                    stringAdapter.add( subQuestionsInFirstLanguage.get(position));
+                    for( int i = position + 1; i < getSubQuestionsInSecondLanguage.size(); i++) {
+                        stringAdapter.add( getSubQuestionsInSecondLanguage.get( i));
                     }
                 }
                 else {
                     openQuestion( view);
-                    subintent.putExtra("eng", questions.get(position).question[0]);
-                    subintent.putExtra( "tr", questions.get(position).question[1]);
-                    subintent.putExtra( "spaceVal", questions.get(position).space);
-                    startActivity(subintent);
+                    nextPageIntent.putExtra("eng", questions.get(position).question[0]);
+                    nextPageIntent.putExtra( "tr", questions.get(position).question[1]);
+                    nextPageIntent.putExtra( "spaceVal", questions.get(position).space);
+                    startActivity(nextPageIntent);
                 }
             }
         });
@@ -87,19 +87,19 @@ public class Subs extends AppCompatActivity {
     }
 
     public void openQuestion( View view) {
-        subintent = new Intent( this, SubWithSpace.class);
-        //return intent;
+        nextPageIntent = new Intent( this,
+                SubWithSpace.class);
     }
 
     public void changeLanguage(View view) {
         if(language == 0) {
-            hellox.clear();
-            hellox.addAll(merhaba);
+            stringAdapter.clear();
+            stringAdapter.addAll(getSubQuestionsInSecondLanguage);
             language = 1;
         }
         else if (language == 1) {
-            hellox.clear();
-            hellox.addAll(hello);
+            stringAdapter.clear();
+            stringAdapter.addAll(subQuestionsInFirstLanguage);
             language = 0;
         }
     }

@@ -1,15 +1,9 @@
 package com.example.asusnb.travelsurvivalunit;
 
 import android.content.Context;
-import android.provider.Settings;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,39 +12,40 @@ import java.util.Scanner;
  * Created by User on 10.05.2018.
  */
 
-public class TranslationPower implements Serializable {
+public class TranslationHelper implements Serializable {
     Category[] categories;
 
-    public TranslationPower( Context context) {
+    public TranslationHelper( Context context) {
         categories = new Category[6];
         for( int i = 0; i < 6; i++) {
             categories[i] = new Category( UniversalData.CATEGORIES[i][0]);
         }
         fillDatasIn( context);
-
     }
-    public ArrayList<SubQuestions> getSubsx( int x) {
+
+    public ArrayList<SubQuestion> getSubsFromHelper(int x) {
         return categories[x].getSubs();
     }
 
     public void fillDatasIn( Context context)  {
         try {
+            InputStream inputStream = context.getAssets().open("subquestions");
+            Scanner scan = new Scanner( inputStream);
 
-            InputStream is = context.getAssets().open("subquestions");
-            System.out.println("wow");
-            Scanner scan = new Scanner( is);
+            String nextLine;
+            String space;
+            String[] propertiesOfSubQuestion;
 
             while ( scan.hasNextLine()) {
-                String x = scan.nextLine();
-                String b;
-                String[] prop = x.split(":");
+                nextLine = scan.nextLine();
 
-                b = prop[3];
+                propertiesOfSubQuestion = nextLine.split(":");
+                space = propertiesOfSubQuestion[3];
 
-                SubQuestions newSub = new SubQuestions(prop[0], prop[1], b);
-                categories[Integer.parseInt( prop[2])].subs.add(newSub);
+                SubQuestion newSub = new SubQuestion(propertiesOfSubQuestion[0],
+                        propertiesOfSubQuestion[1], space);
+                categories[ Integer.parseInt( propertiesOfSubQuestion[2])].subQuestions.add(newSub);
             }
-            //fis.close();
             scan.close();
         }
         catch (IOException e) {
@@ -61,14 +56,14 @@ public class TranslationPower implements Serializable {
     private class Category implements Serializable {
 
         String categoryName;
-        ArrayList<SubQuestions> subs;
+        ArrayList<SubQuestion> subQuestions;
 
         private Category( String inCategory) {
             categoryName = inCategory;
-            subs = new ArrayList<>();
+            subQuestions = new ArrayList<>();
         }
-        public ArrayList<SubQuestions> getSubs() {
-            return subs;
+        public ArrayList<SubQuestion> getSubs() {
+            return subQuestions;
         }
     }
 

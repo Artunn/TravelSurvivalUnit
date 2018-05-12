@@ -9,8 +9,9 @@
           final int SHOPPING = 3;
           final int DAILY = 4;
           final int EMERGENCY = 5;
-          final String[][] CATEGORIES = {{"Transportation","Ulaşım"},{"Accommodation","Konaklama"},{"Restaurant","Restoran"}
-                  ,{"Shopping","Alış-veriş"},{"Daily","Günlük"},{"Emergency","Acil"}};
+          final String[][] CATEGORIES = {{"transportation","ulaşım"},{"accommodation","konaklama"},
+                  {"restaurant","restoran"}
+                  ,{"shopping","alış-veriş"},{"daily","günlük"},{"emergency","acil"}};
 
           final String[][] English= { {"Where is the bus stop", "How can I go to..."}, {"Do you have any room for tonight?", "Is breakfast included?"} };
           final String[][] Turkish =  { {"Otobüs durağı nerede?", "...'ya nasıl gidebilirim?"}, {"Bu akşam için odanız var mı?", "Kahvaltı dahil mi?"}};

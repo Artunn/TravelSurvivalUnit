@@ -32,20 +32,22 @@ public class SubWithSpace extends AppCompatActivity {
         ListView listView;
         listView = findViewById( R.id.listView);
 
-        ArrayList<String> heyy= new ArrayList<>();
+        ArrayList<String> listViewArrayList = new ArrayList<>();
         try {
             System.out.println(space);
             InputStream is = getAssets().open( space);
             Scanner scan = new Scanner(is);
-            String a;
-            String[] b;
+            String nextLine;
+            String[] questionInBothLanguages;
             while (scan.hasNextLine()) {
-                a = scan.nextLine();
-                b = a.split(":");
-                heyy.add( b[0] + "\n" + b[1]);
+                nextLine = scan.nextLine();
+                questionInBothLanguages = nextLine.split(":");
+                listViewArrayList.add( questionInBothLanguages[0] + "\n" +
+                        questionInBothLanguages[1]);
             }
-            ArrayAdapter<String> x = new ArrayAdapter<>( this, android.R.layout.simple_list_item_1,
-                    heyy);
+            ArrayAdapter<String> x = new ArrayAdapter<>( this,
+                    android.R.layout.simple_list_item_1,
+                    listViewArrayList);
             listView.setAdapter(x);
         }
         catch ( IOException e) {

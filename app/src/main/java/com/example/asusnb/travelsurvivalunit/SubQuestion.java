@@ -6,14 +6,14 @@ import java.io.Serializable;
  * Created by User on 10.05.2018.
  */
 
-public class SubQuestions implements Serializable {
+public class SubQuestion implements Serializable {
     String[] question;
     String space;
 
-    public SubQuestions( String first, String second, String space) {
+    public SubQuestion(String turkish, String english, String space) {
         question = new String[2];
-        question[0] = first;
-        question[1] = second;
+        question[0] = turkish;
+        question[1] = english;
 
        // this.category = category;
         this.space = space;
