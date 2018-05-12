@@ -9,13 +9,6 @@
     import java.util.ArrayList;
     import android.content.Context;
     import java.util.List;
-
-    /**
-     * __User Class___
-     * @author __Göksu Turan, Irmak Demir ___
-     * @version __11.05.2018__
-     */
-
     public class User implements UniversalData, Serializable {
 
         int id;

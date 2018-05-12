@@ -47,7 +47,7 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
             else{
                 if(db.changePassword(mail,newPass1.getText().toString())){
                     Toast.makeText(this,"SUCCESSFUL",Toast.LENGTH_SHORT).show();
-                    Intent login = new Intent(this, Login.class);
+                    Intent login = new Intent(ChangePassword.this, Login.class);
                     startActivity(login);
                 }
                 else{
