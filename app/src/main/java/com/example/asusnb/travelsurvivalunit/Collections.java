@@ -60,9 +60,4 @@ public class Collections implements Serializable {
         }
 
         public String getNextTradition() {return traditions.get(traditionNo++);}
-//    private void setFF(){
-//        InputStream is = context.getAssets().open("subquestions");
-//        Scanner scan = new Scanner( is);
-//
-//    }
 }
