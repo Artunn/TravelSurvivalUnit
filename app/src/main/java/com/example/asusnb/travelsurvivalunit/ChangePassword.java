@@ -20,8 +20,8 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
 
-        newPass1 = (EditText) findViewById(R.id.password);
-        newPass2 = (EditText) findViewById(R.id.passwordConfirm);
+        newPass1 = (EditText) findViewById(R.id.newPassword);
+        newPass2 = (EditText) findViewById(R.id.newPassword2);
         resetPass = (Button) findViewById(R.id.resetpassword);
 
         db = new UserDatabaseHelper(this);

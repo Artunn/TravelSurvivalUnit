@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity
 
         cityToUse =
         */
+
+
     }
 
     public void openSettings(View view) {

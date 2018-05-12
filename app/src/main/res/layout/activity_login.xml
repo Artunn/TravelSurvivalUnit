@@ -11,40 +11,45 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="279dp"
-        android:layout_height="277dp"
+        android:layout_width="267dp"
+        android:layout_height="259dp"
         android:adjustViewBounds="true"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoseffaf" />
 
     <EditText
-        android:fontFamily="@font/catcafeaccent"
         android:id="@+id/username"
         android:layout_width="187dp"
         android:layout_height="45dp"
         android:layout_marginTop="232dp"
         android:background="@android:color/white"
+        android:paddingLeft="10dp"
         android:ems="10"
-        android:hint="username"
+        android:fontFamily="@font/catcafeaccent"
+        android:hint="@string/username"
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
         android:typeface="normal"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingStart="10dp" />
 
     <EditText
-        android:fontFamily="@font/catcafeaccent"
         android:id="@+id/passwordConfirm"
         android:layout_width="187dp"
+        android:paddingLeft="10dp"
         android:layout_height="43dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/white"
         android:ems="10"
+        android:fontFamily="@font/catcafeaccent"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textColor="@android:color/black"
@@ -52,7 +57,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        android:paddingStart="10dp" />
 
     <CheckBox
         android:fontFamily="@font/catcafeaccent"
@@ -63,21 +69,25 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="24dp"
         android:buttonTint="@android:color/white"
-        android:text="Remember me"
+        android:text="@string/remember_me"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordConfirm" />
 
     <Button
         android:id="@+id/login"
-        android:layout_width="107dp"
-        android:layout_height="39dp"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
         android:layout_marginEnd="56dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="56dp"
         android:layout_marginStart="8dp"
+        android:background="#64ffffff"
         android:fontFamily="@font/catcafeaccent"
-        android:text="LOG IN"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/rememberMe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/rememberMe" />
@@ -130,6 +140,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rememberMe"
         tools:text="@string/create_an_account" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/catcafeaccent"
+        android:text="@string/travel_survival_unit"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.817" />
 
 
 </android.support.constraint.ConstraintLayout>
