@@ -29,7 +29,7 @@ import java.util.List;
     String targetLanguage;
     String destination;
     NoteDataBaseHelper ndbh;
-    
+
     //int background;
     //int count2;
 
