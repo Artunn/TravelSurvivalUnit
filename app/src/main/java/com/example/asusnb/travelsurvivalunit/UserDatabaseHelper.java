@@ -1,14 +1,12 @@
 package com.example.asusnb.travelsurvivalunit;
+
 import java.util.ArrayList;
 import java.util.List;
-//import java.util.List;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
-
-import com.example.asusnb.travelsurvivalunit.User;
 
 public class UserDatabaseHelper extends SQLiteOpenHelper {
     private static int DATABASE_VERSION = 1;
