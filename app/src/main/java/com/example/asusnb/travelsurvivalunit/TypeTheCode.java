@@ -29,7 +29,7 @@ public class TypeTheCode extends AppCompatActivity implements View.OnClickListen
         codee = getIntent().getExtras().getString("saveCode",null);
         mail = getIntent().getExtras().getString("mail",null);
 
-        Toast.makeText(this,codee,Toast.LENGTH_LONG).show();
+        Toast.makeText(this,mail,Toast.LENGTH_LONG).show();
 
         resend.setOnClickListener(this);
         continueButton.setOnClickListener(this);

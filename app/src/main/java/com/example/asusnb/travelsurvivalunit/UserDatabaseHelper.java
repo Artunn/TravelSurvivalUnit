@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteStatement;
 
 public class UserDatabaseHelper extends SQLiteOpenHelper {
     private static int DATABASE_VERSION = 1;
-    private static String DB_FILE_NAME = "user";
+    private static String DB_FILE_NAME = "userInfo";
     private static ArrayList<User> users;
 
     public UserDatabaseHelper(Context context) {
@@ -20,7 +20,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Create database
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE user_info ( " +
+        String sql = "CREATE TABLE userInfo ( " +
                 " id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 " username VARCHAR2(30), " +
                 " password VARCHAR2(20)," +
@@ -31,7 +31,8 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
                 " count INTEGER," +
                 " motherLanguage VARCHAR(30)," +
                 " targetLanguage VARCHAR(30)," +
-                " destination VARCHAR(30))";
+                " destination VARCHAR(30)," +
+                " email VARCHAR(30))";
         db.execSQL(sql);
     }
 
@@ -46,8 +47,8 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Insert data into table
     public void insertData(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
-        SQLiteStatement stmt = db.compileStatement("INSERT INTO user_info (username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination) "
-                + "VALUES (?,?,?,?)");
+        SQLiteStatement stmt = db.compileStatement("INSERT INTO userInfo (username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email) "
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?)");
         stmt.bindString(1, user.getUsername());
         stmt.bindString(2, user.getPassword());
         stmt.bindString(3, user.getHomeCountry());
@@ -58,6 +59,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         stmt.bindString(8, user.getMotherLanguage());
         stmt.bindString(9, user.getTargetLanguage());
         stmt.bindString(10, user.getDestination());
+        stmt.bindString(11,user.getEmail());
         stmt.execute();
         stmt.close();
         db.close();
@@ -66,7 +68,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Update data into table
     public void updateData(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
-        SQLiteStatement stmt = db.compileStatement("UPDATE student_info SET username=?, password=?, homeCountry=?, name=?, surname=?, avatarId=?, count=?, motherLanguage=?, targetLanguage=?, destination=?" +
+        SQLiteStatement stmt = db.compileStatement("UPDATE userInfo SET username=?, password=?, homeCountry=?, name=?, surname=?, avatarId=?, count=?, motherLanguage=?, targetLanguage=?, destination=?, email =?" +
                 "WHERE id = ?");
         stmt.bindString(1, user.getUsername());
         stmt.bindString(2, user.getPassword());
@@ -78,6 +80,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         stmt.bindString(8, user.getMotherLanguage());
         stmt.bindString(9, user.getTargetLanguage());
         stmt.bindString(10, user.getDestination());
+        stmt.bindString(11,user.getEmail());
 
         stmt.execute();
         stmt.close();
@@ -88,7 +91,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     public List getUsers() {
         List users = new ArrayList();
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination from user_info ORDER BY id ASC";
+        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email from userInfo ORDER BY id ASC";
         Cursor cursor = db.rawQuery(query, null);
         while (cursor.moveToNext()) {
             User usr = new User();
@@ -103,6 +106,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
             usr.setMotherLanguage(cursor.getString(8));
             usr.setTargetLanguage(cursor.getString(9));
             usr.setDestination(cursor.getString(10));
+            usr.setEmail(cursor.getString(11));
             users.add(usr);
         }
         db.close();
@@ -112,7 +116,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Delete data from the table for the given id
     public void deleteData(int usrId) {
         SQLiteDatabase db = this.getWritableDatabase();
-        SQLiteStatement stmt = db.compileStatement("DELETE FROM user_info WHERE id = ?");
+        SQLiteStatement stmt = db.compileStatement("DELETE FROM userInfo WHERE id = ?");
         stmt.bindLong(1, usrId);
         stmt.execute();
         stmt.close();
@@ -122,7 +126,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
     //Select data for the given id
     public User getUserById(int userId) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination FROM user_info WHERE id = ?";
+        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email FROM userInfo WHERE id = ?";
         Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(userId)});
         cursor.moveToFirst();
         User usr = new User();
@@ -137,6 +141,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         usr.setMotherLanguage(cursor.getString(8));
         usr.setTargetLanguage(cursor.getString(9));
         usr.setDestination(cursor.getString(10));
+        usr.setEmail(cursor.getString(11));
         db.close();
         return usr;
     }
@@ -189,10 +194,11 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
+
     public void updateUsers() {
         //users.clear();
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email from user_info ORDER BY id ASC";
+        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email from userInfo ORDER BY id ASC";
         Cursor cursor = db.rawQuery(query, null);
         while (cursor.moveToNext()) {
             User usr = new User();

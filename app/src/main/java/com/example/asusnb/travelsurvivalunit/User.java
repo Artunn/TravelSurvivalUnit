@@ -1,15 +1,16 @@
 package com.example.asusnb.travelsurvivalunit;
+    import java.io.Serializable;
+    import java.util.ArrayList;
+    import android.content.Context;
+    import java.util.List;
 
-import java.io.Serializable;
-import android.content.Context;
-import java.util.List;
+    /**
+     * __User Class___
+     * @author __Göksu Turan, Irmak Demir ___
+     * @version __11.05.2018__
+     */
 
-/**
- * __User Class___
- * @author __Göksu Turan, Irmak Demir ___
- * @version __11.05.2018__
- */
-public class User implements UniversalData, Serializable {
+    public class User implements UniversalData, Serializable {
 
     int id;
     public static User currentUser;

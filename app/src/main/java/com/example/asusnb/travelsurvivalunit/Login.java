@@ -76,7 +76,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                          startActivity(mainMenu);
                      }
                      else{
-                         Toast.makeText(this,"CHECK YOUR USERNAME AND PASSWORD",Toast.LENGTH_SHORT).show();
+                         if(!db.changePassword("frendfopik@gmail.com","1111111")){
+                             Toast.makeText(this,"Pass changed",Toast.LENGTH_SHORT).show();
+                         }
+                         //Toast.makeText(this,"CHECK YOUR USERNAME AND PASSWORD",Toast.LENGTH_SHORT).show();
                      }
                 }
                 break;
