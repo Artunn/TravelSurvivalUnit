@@ -29,6 +29,7 @@ import java.util.List;
     String targetLanguage;
     String destination;
     NoteDataBaseHelper ndbh;
+    
     //int background;
     //int count2;
 
@@ -51,8 +52,8 @@ import java.util.List;
         this.homeCountry = homeCountry;
         this.name = name;
         this.surname = surname;
-        avatarId = myAvatarsId[count];
         count = 0;
+        avatarId = MY_AVATARS_ID[count];
         //favourites = new ArrayList<String>();
         this.motherLanguage = motherLanguage;
         this.targetLanguage = targetLanguage;
@@ -71,8 +72,8 @@ import java.util.List;
         this.homeCountry = homeCountry;
         this.name = name;
         this.surname = surname;
-        avatarId = myAvatarsId[count];
         count = 0;
+        avatarId = MY_AVATARS_ID[count];
         //favourites = new ArrayList<String>();
         this.motherLanguage = motherLanguage;
         this.targetLanguage = targetLanguage;
@@ -173,11 +174,11 @@ import java.util.List;
      */
     public int nextAvatar()
     {
-        if ( count < myAvatarsId.length - 1 )
+        if ( count < MY_AVATARS_ID.length - 1 )
             count++;
         else
             count = 0;
-        avatarId = myAvatarsId[count];
+        avatarId = MY_AVATARS_ID[count];
 
         return avatarId;
     }
@@ -191,8 +192,8 @@ import java.util.List;
         if ( count > 0 )
             count--;
         else
-            count = myAvatarsId.length - 1;
-        avatarId = myAvatarsId[count];
+            count = MY_AVATARS_ID.length - 1;
+        avatarId = MY_AVATARS_ID[count];
 
         return avatarId;
     }
