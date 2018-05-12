@@ -39,7 +39,9 @@ public class User implements UniversalData, Serializable {
         ndbh = new NoteDataBaseHelper( context );
     }
 
-    public User( String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination,  Context context, String email)
+    public User( String username, String password, String homeCountry, String name, String surname,
+                 String motherLanguage, String targetLanguage, String destination,  Context context,
+                 String email)
     {
         this.username = username;
         this.password = password;
@@ -57,7 +59,9 @@ public class User implements UniversalData, Serializable {
 
     }
 
-    public User ( int id, String username, String password, String homeCountry, String name, String surname,String motherLanguage, String targetLanguage, String destination, Context context, String email ){
+    public User ( int id, String username, String password, String homeCountry, String name,
+                  String surname,String motherLanguage, String targetLanguage, String destination,
+                  Context context, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
