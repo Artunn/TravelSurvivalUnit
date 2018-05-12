@@ -17,10 +17,6 @@ public class TraditionsActivity extends AppCompatActivity {
 
         TextView tw = findViewById(R.id.tradition);
         tw.setMovementMethod(new ScrollingMovementMethod());
-
-        Context context;
-        TextView tradNo = findViewById(R.id.tradition_order);
-        tradNo.setText("1");
     }
 
     public void backToMain (View view) {

@@ -3,6 +3,7 @@ package com.example.asusnb.travelsurvivalunit;
 import android.content.Context;
 import android.media.Image;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 /**
@@ -10,7 +11,7 @@ import java.util.TimeZone;
  * @author __Ayşe Ezgi Yavuz___
  * @version __11.05.2018__
  */
-public class City{
+public class City implements Serializable {
     // properties
     final int[] cityBackgrounds = {};
     String cityName;

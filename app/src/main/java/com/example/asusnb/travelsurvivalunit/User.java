@@ -5,6 +5,7 @@
      * @author __Göksu Turan, Irmak Demir ___
      * @version __11.05.2018__
      */
+    import java.io.Serializable;
     import java.util.ArrayList;
     import android.content.Context;
     import java.util.List;
@@ -15,7 +16,7 @@
      * @version __11.05.2018__
      */
 
-    public class User implements UniversalData {
+    public class User implements UniversalData, Serializable {
 
         int id;
         public static User currentUser;
