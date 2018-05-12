@@ -11,7 +11,8 @@ import java.util.TimeZone;
  */
 public class City{
     // properties
-    final int[] cityBackgrounds = {}; //
+    final int[] cityBackgrounds = {}; //Add background pic
+    Image weather; //??
     String cityName;
     String country;
     Collections tradFFAncCurrency;
@@ -20,7 +21,6 @@ public class City{
     double currencyRate;
     GregorianCalendar lastRetrieved;
     int background;
-    Image weather;
     Integer backgroundId;
     int count;
 
