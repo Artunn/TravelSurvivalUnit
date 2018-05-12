@@ -16,6 +16,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -27,7 +28,11 @@
         <activity android:name=".SettingsActivity" />
         <activity android:name=".TraditionsActivity" />
         <activity android:name=".ResetPassword" />
+        <activity android:name=".SubWithSpace" />
+        <activity android:name=".Subs" />
         <activity android:name=".ChangePassword" />
+        <activity android:name=".FunFactsActivity" />
+        <activity android:name=".MyFavouritesActivity"></activity>
     </application>
 
 </manifest>

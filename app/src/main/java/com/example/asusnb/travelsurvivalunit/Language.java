@@ -1,7 +1,5 @@
     package com.example.asusnb.travelsurvivalunit;
 
-    import com.example.asusnb.travelsurvivalunit.UniversalData;
-
     public class Language implements UniversalData {
             //properties
             String  name;
@@ -31,6 +29,5 @@
                 }
                 return targetLanguage [row][coloumn];
             }
-
         }
 

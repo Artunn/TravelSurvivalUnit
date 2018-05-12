@@ -11,6 +11,13 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /*
+        City cityToUse;
+        User userToUse;
+
+        cityToUse =
+        */
     }
 
     public void openSettings(View view) {
@@ -20,6 +27,21 @@ public class MainActivity extends AppCompatActivity
 
     public void openTraditions (View view) {
         Intent intent = new Intent (this, TraditionsActivity.class);
+        startActivity (intent);
+    }
+
+    public void openTranslation (View view) {
+        Intent intent = new Intent (this, CategoriesPage.class);
+        startActivity (intent);
+    }
+
+    public void openFunFacts (View view) {
+        Intent intent = new Intent (this, FunFactsActivity.class);
+        startActivity (intent);
+    }
+
+    public void openFavourites (View view) {
+        Intent intent = new Intent (this, MyFavouritesActivity.class);
         startActivity (intent);
     }
 }
