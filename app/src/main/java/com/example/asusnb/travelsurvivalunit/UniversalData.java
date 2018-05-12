@@ -2,15 +2,16 @@
 
      public interface UniversalData {
          // avatars
-          Integer[] myAvatarsId = { R.drawable.avatar1, R.drawable.avatar2};
+         Integer[] MY_AVATARS_ID = { R.drawable.avatar1, R.drawable.avatar2 };
+
 
           // translation
-          int TRANSPORTATION = 0;
-          int ACCODOMATION = 1;
-          int RESTAURANT = 2;
-          int SHOPPING = 3;
-          int DAILY = 4;
-          int EMERGENCY = 5;
+          //int TRANSPORTATION = 0;
+          //int ACCODOMATION = 1;
+          //int RESTAURANT = 2;
+          //int SHOPPING = 3;
+          //int DAILY = 4;
+          //int EMERGENCY = 5;
           String[][] CATEGORIES = {{"transportation","ulaşım"},{"accommodation","konaklama"},
                   {"restaurant","restoran"}
                   ,{"shopping","alış-veriş"},{"daily","günlük"},{"emergency","acil"}};
@@ -18,6 +19,5 @@
           String[][] Turkish =  { {"Otobüs durağı nerede?", "...'ya nasıl gidebilirim?"}, {"Bu akşam için odanız var mı?", "Kahvaltı dahil mi?"}};
 
           // cities
-         City london = new City ("London", "England");
-         City istanbul = new City ("Istanbul", "Turkey");
+
      }
