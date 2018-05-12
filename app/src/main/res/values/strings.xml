@@ -37,7 +37,7 @@
         <item>English</item>
         <item>Türkçe</item>
         <item>Français</item>
-        <item>Deutsche</item>
+        <item>Deutsch</item>
     </string-array>
     <string-array name="country_array">
         <item>England</item>
