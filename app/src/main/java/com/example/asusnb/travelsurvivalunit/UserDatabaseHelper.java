@@ -1,6 +1,7 @@
 package com.example.asusnb.travelsurvivalunit;
 import java.util.ArrayList;
 import java.util.List;
+//import java.util.List;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +13,7 @@ import com.example.asusnb.travelsurvivalunit.User;
 public class UserDatabaseHelper extends SQLiteOpenHelper {
     private static int DATABASE_VERSION = 1;
     private static String DB_FILE_NAME = "user";
+    private static ArrayList<User> users;
 
     public UserDatabaseHelper(Context context) {
         super(context, DB_FILE_NAME, null, DATABASE_VERSION);
@@ -139,5 +141,77 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         usr.setDestination(cursor.getString(10));
         db.close();
         return usr;
+    }
+
+    public boolean usernameAndPasswordCheck(String username, String password){
+        users = new ArrayList<>();
+        updateUsers();
+        for(User x: users ){
+            if(x.getUsername().equals(username)){
+                if(x.getPassword().equals(password)) {
+                    User.currentUser = x;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean usedMailTest(String mail){
+        users = new ArrayList<>();
+        updateUsers();
+        for(User x: users ){
+            if(x.getEmail().equals(mail)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean usedUsernameTest(String username){
+        users = new ArrayList<>();
+        updateUsers();
+        for(User x: users ){
+            if(x.getUsername().equals(username)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean changePassword(String mail,String password){
+        users = new ArrayList<>();
+        updateUsers();
+        for(User x: users ){
+            if(x.getEmail().equals(mail)){
+                x.setPassword(password);
+                updateData(x);
+                return true;
+            }
+        }
+        return false;
+    }
+    public void updateUsers() {
+        //users.clear();
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT id, username, password, homeCountry, name, surname, avatarId, count, motherLanguage, targetLanguage, destination, email from user_info ORDER BY id ASC";
+        Cursor cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()) {
+            User usr = new User();
+            usr.setId(cursor.getInt(0));
+            usr.setUsername(cursor.getString(1));
+            usr.setPassword(cursor.getString(2));
+            usr.setHomeCountry(cursor.getString(3));
+            usr.setName(cursor.getString(4));
+            usr.setSurname(cursor.getString(5));
+            usr.setAvatar(cursor.getInt(6));
+            usr.setCount(cursor.getInt(7));
+            usr.setMotherLanguage(cursor.getString(8));
+            usr.setTargetLanguage(cursor.getString(9));
+            usr.setDestination(cursor.getString(10));
+            usr.setEmail(cursor.getString(11));
+            users.add(usr);
+        }
+        db.close();
     }
 }

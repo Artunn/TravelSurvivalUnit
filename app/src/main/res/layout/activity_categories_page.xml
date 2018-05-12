@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asusnb.travelsurvivalunit.CategoriesPage"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+
+<LinearLayout
+    android:id="@+id/categories"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginLeft="24dp"
+    android:layout_marginRight="24dp"
+    android:layout_marginStart="24dp"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <Button
+        android:id="@+id/transportation"
+        android:fontFamily="@font/catcafeaccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#32ffffff"
+        android:onClick="c1"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/accommodation"
+        android:fontFamily="@font/catcafeaccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#32ffffff"
+        android:onClick="c2"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/restaurant"
+        android:fontFamily="@font/catcafeaccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#32ffffff"
+        android:onClick="c3"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/shopping"
+        android:fontFamily="@font/catcafeaccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#32ffffff"
+        android:onClick="c4"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/daily"
+        android:fontFamily="@font/catcafeaccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#32ffffff"
+        android:onClick="c5"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/emergency"
+        android:fontFamily="@font/catcafeaccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#32ffffff"
+        android:onClick="c6"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

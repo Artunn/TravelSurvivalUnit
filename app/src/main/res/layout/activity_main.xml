@@ -10,8 +10,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="169dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:background="#32ffffff"
@@ -24,13 +24,16 @@
             android:id="@+id/country_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="56dp"
             android:layout_marginLeft="72dp"
+            android:layout_marginRight="56dp"
             android:layout_marginStart="72dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/country"
             android:textColor="@android:color/background_light"
             android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/city_main"
             app:layout_constraintTop_toBottomOf="@+id/name_surname_main" />
 
@@ -38,50 +41,62 @@
             android:id="@+id/refresh_button_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginStart="40dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginLeft="112dp"
+            android:layout_marginRight="72dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
             app:layout_constraintBottom_toTopOf="@+id/refresh_main"
-            app:layout_constraintStart_toStartOf="@+id/trans_dir_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/currency_top"
+            app:layout_constraintTop_toBottomOf="@+id/trans_dir_main"
             app:srcCompat="@android:drawable/ic_menu_rotate" />
 
         <TextView
             android:id="@+id/currency_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/currency2_str"
             android:textColor="@android:color/background_light"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/currency_top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/currency_top" />
 
         <TextView
             android:id="@+id/degree_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="24dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/degree"
             android:textColor="@android:color/background_light"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/avatar"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/currency_top"
             app:layout_constraintStart_toEndOf="@+id/avatar" />
 
         <TextView
             android:id="@+id/refresh_main"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginLeft="112dp"
+            android:layout_marginRight="64dp"
+            android:layout_marginStart="112dp"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/refresh"
             android:textColor="@android:color/background_light"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/currency_bottom"
-            app:layout_constraintStart_toStartOf="@+id/trans_dir_main" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/currency_bottom"
+            app:layout_constraintTop_toBottomOf="@+id/refresh_button_image" />
 
         <TextView
             android:id="@+id/city_main"
@@ -89,47 +104,61 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/city_name"
             android:textColor="@android:color/background_light"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/avatar"
-            app:layout_constraintTop_toTopOf="@+id/avatar" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/trans_dir_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="56dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginStart="72dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/translation_dir"
             android:textColor="@android:color/background_light"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/country_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/city_main"
             app:layout_constraintTop_toBottomOf="@+id/country_main" />
 
         <TextView
             android:id="@+id/name_surname_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="56dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/name_surname"
             android:textColor="@android:color/background_light"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/country_main"
-            app:layout_constraintTop_toTopOf="@+id/avatar" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/city_main"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/currency_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/currency1_str"
             android:textColor="@android:color/background_light"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/avatar"
+            app:layout_constraintBottom_toTopOf="@+id/currency_bottom"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/avatar" />
 
         <ImageView
@@ -156,6 +185,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
@@ -166,6 +196,7 @@
             android:layout_marginBottom="5dp"
             android:background="#32ffffff"
             android:fontFamily="@font/catcafeaccent"
+            android:onClick="openTranslation"
             android:text="@string/translation_button_text"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
@@ -185,18 +216,6 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/fun_facts_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:background="#32ffffff"
-            android:fontFamily="@font/catcafeaccent"
-            android:text="@string/fun_facts_button_text"
-            android:textAllCaps="false"
-            android:textColor="@android:color/background_light"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/world_clock_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -204,6 +223,19 @@
             android:background="#32ffffff"
             android:fontFamily="@font/catcafeaccent"
             android:text="@string/world_clock_button_text"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/fun_facts_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="#32ffffff"
+            android:fontFamily="@font/catcafeaccent"
+            android:onClick="openFunFacts"
+            android:text="@string/fun_facts_button_text"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
             android:textSize="24sp" />
@@ -228,6 +260,7 @@
             android:layout_marginBottom="5dp"
             android:background="#32ffffff"
             android:fontFamily="@font/catcafeaccent"
+            android:onClick="openFavourites"
             android:text="@string/favourites_button_text"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
