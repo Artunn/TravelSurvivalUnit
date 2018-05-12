@@ -14,27 +14,28 @@ import java.util.ArrayList;
 public class CategoriesPage extends AppCompatActivity {
 
     Button transportationButton;
-    Button accomodationButton;
+    Button accommodationButton;
     Button restaurantButton;
     Button shoppingButton;
     Button dailyButton;
     Button emergencyButton;
     Intent intent;
     TranslationPower translationPow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories_page);
 
         transportationButton = findViewById( R.id.transportation);
-        accomodationButton = findViewById( R.id.accomodation);
+        accommodationButton = findViewById( R.id.accommodation);
         restaurantButton = findViewById( R.id.restaurant);
         shoppingButton = findViewById( R.id.shopping);
         dailyButton = findViewById( R.id.daily);
         emergencyButton = findViewById( R.id.emergency);
 
         transportationButton.setText( UniversalData.CATEGORIES[0][0]);
-        accomodationButton.setText( UniversalData.CATEGORIES[1][0]);
+        accommodationButton.setText( UniversalData.CATEGORIES[1][0]);
         restaurantButton.setText( UniversalData.CATEGORIES[2][0]);
         shoppingButton.setText( UniversalData.CATEGORIES[3][0]);
         dailyButton.setText( UniversalData.CATEGORIES[4][0]);

@@ -19,13 +19,14 @@ public class Subs extends AppCompatActivity {
     ListView listView;
     TranslationPower tr;
     int language;
+    Intent subintent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subs);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         tr = (TranslationPower) intent.getSerializableExtra("category");
 
         questions = tr.getSubsx( 0);
@@ -38,7 +39,7 @@ public class Subs extends AppCompatActivity {
             merhaba.add(x.question[1]);
         }
 
-        hellox = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1,
+        hellox = new ArrayAdapter<>( this, android.R.layout.simple_list_item_1,
                 new ArrayList<String>());
         hellox.addAll( hello);
 
@@ -49,7 +50,7 @@ public class Subs extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 System.out.println( questions.get( position).question[0]);
-                if( !questions.get(position).hasSpace && language == 0) {
+                if( questions.get(position).space.equals("null") && language == 0) {
 
                     hellox.clear();
                     for( int i = 0; i < position; i++) {
@@ -60,7 +61,7 @@ public class Subs extends AppCompatActivity {
                         hellox.add( hello.get( i));
                     }
                 }
-                if( !questions.get(position).hasSpace && language == 1) {
+                else if( questions.get(position).space.equals("null") && language == 1) {
 
                     hellox.clear();
                     for( int i = 0; i < position; i++) {
@@ -71,11 +72,23 @@ public class Subs extends AppCompatActivity {
                         hellox.add( merhaba.get( i));
                     }
                 }
+                else {
+                    openQuestion( view);
+                    subintent.putExtra("eng", questions.get(position).question[0]);
+                    subintent.putExtra( "tr", questions.get(position).question[1]);
+                    subintent.putExtra( "spaceVal", questions.get(position).space);
+                    startActivity(subintent);
+                }
             }
         });
 
 
 
+    }
+
+    public void openQuestion( View view) {
+        subintent = new Intent( this, SubWithSpace.class);
+        //return intent;
     }
 
     public void changeLanguage(View view) {

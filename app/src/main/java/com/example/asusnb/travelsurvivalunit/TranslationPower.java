@@ -42,14 +42,10 @@ public class TranslationPower implements Serializable {
 
             while ( scan.hasNextLine()) {
                 String x = scan.nextLine();
-                boolean b;
+                String b;
                 String[] prop = x.split(":");
 
-                if (prop[3] == "+") {
-                    b = true;
-                } else {
-                    b = false;
-                }
+                b = prop[3];
 
                 SubQuestions newSub = new SubQuestions(prop[0], prop[1], b);
                 categories[Integer.parseInt( prop[2])].subs.add(newSub);

@@ -21,10 +21,11 @@
         <activity android:name=".SettingsActivity">
             android:parentActivityName=".MainActivity"
         </activity>
-        <activity android:name=".TraditionsActivity"></activity>
+        <activity android:name=".TraditionsActivity" />
         <activity android:name=".RegisterSecondScreen" />
-        <activity android:name=".CategoriesPage"></activity>
-        <activity android:name=".Subs"></activity>
+        <activity android:name=".CategoriesPage" />
+        <activity android:name=".Subs" />
+        <activity android:name=".SubWithSpace"></activity>
     </application>
 
 </manifest>

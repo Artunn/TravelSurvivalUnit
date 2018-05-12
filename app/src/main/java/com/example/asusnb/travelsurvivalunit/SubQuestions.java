@@ -8,16 +8,15 @@ import java.io.Serializable;
 
 public class SubQuestions implements Serializable {
     String[] question;
-    //int category;
-    boolean hasSpace;
+    String space;
 
-    public SubQuestions( String first, String second, boolean hasSpace) {
+    public SubQuestions( String first, String second, String space) {
         question = new String[2];
         question[0] = first;
         question[1] = second;
 
        // this.category = category;
-        this.hasSpace = hasSpace;
+        this.space = space;
     }
 
 }
