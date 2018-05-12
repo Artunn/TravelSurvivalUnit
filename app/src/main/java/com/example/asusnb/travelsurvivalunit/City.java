@@ -1,7 +1,9 @@
 package com.example.asusnb.travelsurvivalunit;
 
+import android.content.Context;
 import android.media.Image;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 /**
@@ -9,7 +11,7 @@ import java.util.TimeZone;
  * @author __Ayşe Ezgi Yavuz___
  * @version __11.05.2018__
  */
-public class City{
+public class City implements Serializable {
     // properties
     final int[] cityBackgrounds = {}; //Add background pic
     Image weather; //??
@@ -25,11 +27,11 @@ public class City{
     int count;
 
     // constructors
-    public City( String cityName, String country, String destination){
+    public City(String cityName, String country, String destination, Context context){
         this.cityName = cityName;
         this.country = country;
         lastRetrieved = new GregorianCalendar( TimeZone.getTimeZone( cityName));
-        tradFFAncCurrency = new Collections();
+        tradFFAncCurrency = new Collections( context);
         //this.music = music;
         cityCurrency = new Currency();
         backgroundId = cityBackgrounds[count];

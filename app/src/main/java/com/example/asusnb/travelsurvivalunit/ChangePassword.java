@@ -3,7 +3,6 @@ package com.example.asusnb.travelsurvivalunit;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,7 +46,7 @@ public class ChangePassword extends AppCompatActivity implements View.OnClickLis
             else{
                 if(db.changePassword(mail,newPass1.getText().toString())){
                     Toast.makeText(this,"SUCCESSFUL",Toast.LENGTH_SHORT).show();
-                    Intent login = new Intent(this, Login.class);
+                    Intent login = new Intent(ChangePassword.this, Login.class);
                     startActivity(login);
                 }
                 else{
