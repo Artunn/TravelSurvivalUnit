@@ -82,4 +82,9 @@ public class SettingsActivity extends AppCompatActivity {
         imageView.setImageResource( image);
         artun.setAvatar( image);
     }
+    public void goBack(View view) {
+        Intent intent;
+        intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
