@@ -18,13 +18,13 @@ public class City implements Serializable {
     String cityName;
     String country;
     Collections tradFFAncCurrency;
-    //AudioTrack music;
     Currency cityCurrency;
     double currencyRate;
     GregorianCalendar lastRetrieved;
     int background;
     Integer backgroundId;
     int count;
+    //AudioTrack music;
 
     // constructors
     public City(String cityName, String country, String destination, Context context){
@@ -34,8 +34,8 @@ public class City implements Serializable {
         tradFFAncCurrency = new Collections( context);
         //this.music = music;
         cityCurrency = new Currency();
-        backgroundId = cityBackgrounds[count];
         count = 0;
+        backgroundId = cityBackgrounds[count];
         updateAllData( destination);
     }
 
@@ -46,8 +46,8 @@ public class City implements Serializable {
         //tradFFAncCurrency = new Collections( cityName, country, destination);
         //this.music = music;
         cityCurrency = new Currency();
-        backgroundId = cityBackgrounds[count];
         count = 0;
+        backgroundId = cityBackgrounds[count];
     }
 
     // methods
