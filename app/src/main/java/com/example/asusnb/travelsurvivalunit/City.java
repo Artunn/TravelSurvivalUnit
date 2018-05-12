@@ -1,5 +1,6 @@
 package com.example.asusnb.travelsurvivalunit;
 
+import android.content.Context;
 import android.media.Image;
 
 import java.util.GregorianCalendar;
@@ -25,11 +26,11 @@ public class City{
     int count;
 
     // constructors
-    public City( String cityName, String country, String destination){
+    public City(String cityName, String country, String destination, Context context){
         this.cityName = cityName;
         this.country = country;
         lastRetrieved = new GregorianCalendar( TimeZone.getTimeZone( cityName));
-        tradFFAncCurrency = new Collections();
+        tradFFAncCurrency = new Collections( context);
         //this.music = music;
         cityCurrency = new Currency();
         backgroundId = cityBackgrounds[count];

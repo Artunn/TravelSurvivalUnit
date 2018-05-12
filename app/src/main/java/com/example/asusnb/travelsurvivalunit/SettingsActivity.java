@@ -29,7 +29,6 @@ public class SettingsActivity extends AppCompatActivity {
         builder.setSingleChoiceItems(listItems, -1,new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                System.out.print("HELLO");
             }
         });
         AlertDialog dialog = builder.create();

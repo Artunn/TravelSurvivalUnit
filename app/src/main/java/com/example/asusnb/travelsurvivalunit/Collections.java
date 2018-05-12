@@ -1,7 +1,12 @@
 package com.example.asusnb.travelsurvivalunit;
 
+import android.content.Context;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Collections {
     //properties
@@ -12,7 +17,7 @@ public class Collections {
     ArrayList<String> funFacts;
 
     //constructor
-    public Collections() {
+    public Collections( Context context) {
         //Files need to be added
         countries = new HashMap<String, String>();
         countries.put("Turkey", "TRY");
@@ -20,6 +25,27 @@ public class Collections {
         traditions = new ArrayList<String>();
         funFacts = new ArrayList<String>();
         cityFF = new HashMap<String, String>();
+
+        try {
+            InputStream inputStream = context.getAssets().open("traditions");
+            Scanner scan = new Scanner(inputStream);
+            while(scan.hasNextLine()) {
+               traditions.add(scan.nextLine());
+            }
+        }
+        catch ( IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            InputStream inputStream = context.getAssets().open("funfacts");
+            Scanner scan = new Scanner(inputStream);
+            while(scan.hasNextLine()) {
+                funFacts.add(scan.nextLine());
+            }
+        }
+        catch ( IOException e) {
+            e.printStackTrace();
+        }
     }
         //methods
         public void addCountry(String countryName, String countryCurr){
