@@ -41,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
         surnameText.setText(artun.getSurname());
         languageText.setText(artun.getMotherLanguage());
         homeCountry.setText(artun.homeCountry);
+        destination.setText(artun.destination);
     }
     public void optionTheme(View view) {
         String[] listItems = new String[] {"item1","item2"};
