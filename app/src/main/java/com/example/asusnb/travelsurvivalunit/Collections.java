@@ -16,11 +16,13 @@ public class Collections implements Serializable {
     HashMap<String, String> cityFF;
     ArrayList<String> traditions;
     ArrayList<String> funFacts;
-    int traditionNo = 1;
-    int funFactNo = 1;
+    int traditionNo;
+    int funFactNo;
+    String funFactsFileName;
+    String traditionsFileName;
 
     //constructor
-    public Collections( Context context) {
+    public Collections( Context context, String traditionsFileName, String funFactsFileName ) {
         //Files need to be added
         countries = new HashMap<String, String>();
         countries.put("Turkey", "TRY");
@@ -28,9 +30,13 @@ public class Collections implements Serializable {
         traditions = new ArrayList<String>();
         funFacts = new ArrayList<String>();
         cityFF = new HashMap<String, String>();
+        traditionNo = 0;
+        funFactNo = 0;
+        this.traditionsFileName = traditionsFileName;
+        this.funFactsFileName = funFactsFileName;
 
         try {
-            InputStream inputStream = context.getAssets().open("traditions");
+            InputStream inputStream = context.getAssets().open(traditionsFileName);
             Scanner scan = new Scanner(inputStream);
             while(scan.hasNextLine()) {
                traditions.add(scan.nextLine());
@@ -40,7 +46,7 @@ public class Collections implements Serializable {
             e.printStackTrace();
         }
         try {
-            InputStream inputStream = context.getAssets().open("funfacts");
+            InputStream inputStream = context.getAssets().open( funFactsFileName );
             Scanner scan = new Scanner(inputStream);
             while(scan.hasNextLine()) {
                 funFacts.add(scan.nextLine());
@@ -59,10 +65,21 @@ public class Collections implements Serializable {
             return countries.get(country);
         }
 
-        public String getNextTradition() {return traditions.get(traditionNo++);}
-//    private void setFF(){
-//        InputStream is = context.getAssets().open("subquestions");
-//        Scanner scan = new Scanner( is);
-//
-//    }
+        public String getNextFunFact()
+        {
+            funFactNo++;
+            return funFacts.get( funFactNo );
+        }
+
+        public String getNextTradition()
+        {
+            traditionNo++;
+            return traditions.get(traditionNo);
+        }
+
+        public String getCurrentTradition() { return traditions.get( traditionNo ); }
+
+        public String getCurrentFunFact() { return funFacts.get( funFactNo ); }
+
+
 }

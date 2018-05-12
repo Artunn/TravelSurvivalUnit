@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name" translatable="false">Travel Survival Unit</string>
-    <string name="create_an_account"><u>Create an account</u></string>
-    <string name="reset_password"><u>Reset Password</u></string>
-    <string name="continue_without_registration"><u>Continue Without Registration</u></string>
+    <string name="app_name" translatable="false">travel survival unit</string>
+    <string name="create_an_account"><u>create an account</u></string>
+    <string name="reset_password"><u>reset password</u></string>
+    <string name="continue_without_registration"><u>continue without registration</u></string>
     <string name="password">password</string>
-    <string name="settingsName">name : null</string>
-    <string name="settingsSurname">surname : pointers</string>
+    <string name="settingsName">name :</string>
+    <string name="settingsSurname">surname :</string>
     <string name="settingsLang">lang :</string>
     <string name="settingsHomeCountry">home country :</string>
     <string name="settingsBackground">background :</string>
@@ -21,7 +21,7 @@
     <string name="degree">4\u00b0 C</string>
     <string name="currency1_str">1 GBP = 5.5301 TRY</string>
     <string name="currency2_str">1 TRY = 0.1808 GBP</string>
-    <string name="last_retrieved_beg">Last retrieved</string>
+    <string name="last_retrieved_beg">last retrieved</string>
     <string name="last_retrieved_end">days ago</string>
     <string name="name_surname">null pointers</string>
     <string name="translation_dir">english - turkish</string>
@@ -33,6 +33,15 @@
     <string name="favourites_menu">MY FAVOURITES \u30c4</string>
     <string name="fun_fact_two" />
     <string name="fun_fact_three" />
+    <string name="username">username</string>
+    <string name="continuebutton">continue</string>
+    <string name="log_in">log in</string>
+    <string name="logo">logo</string>
+    <string name="remember_me">Remember me</string>
+    <string name="email">email</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="travel_survival_unit">travel survival unit</string>
+    <string name="type_your_mail">type your mail</string>
     <string-array name="language_array">
         <item>English</item>
         <item>Türkçe</item>

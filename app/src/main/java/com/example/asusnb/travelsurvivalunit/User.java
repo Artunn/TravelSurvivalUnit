@@ -1,8 +1,10 @@
 package com.example.asusnb.travelsurvivalunit;
-    import java.io.Serializable;
-    import java.util.ArrayList;
-    import android.content.Context;
-    import java.util.List;
+
+import android.content.Context;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
     /**
      * __User Class___
@@ -22,11 +24,12 @@ package com.example.asusnb.travelsurvivalunit;
     String surname;
     Integer avatarId;
     int count;
-    //ArrayList<String> favourites;
+    ArrayList<String> favourites;
     String motherLanguage;
     String targetLanguage;
     String destination;
     NoteDataBaseHelper ndbh;
+
     //int background;
     //int count2;
 
@@ -49,8 +52,8 @@ package com.example.asusnb.travelsurvivalunit;
         this.homeCountry = homeCountry;
         this.name = name;
         this.surname = surname;
-        avatarId = myAvatarsId[count];
         count = 0;
+        avatarId = MY_AVATARS_ID[count];
         //favourites = new ArrayList<String>();
         this.motherLanguage = motherLanguage;
         this.targetLanguage = targetLanguage;
@@ -69,8 +72,8 @@ package com.example.asusnb.travelsurvivalunit;
         this.homeCountry = homeCountry;
         this.name = name;
         this.surname = surname;
-        avatarId = myAvatarsId[count];
         count = 0;
+        avatarId = MY_AVATARS_ID[count];
         //favourites = new ArrayList<String>();
         this.motherLanguage = motherLanguage;
         this.targetLanguage = targetLanguage;
@@ -171,11 +174,11 @@ package com.example.asusnb.travelsurvivalunit;
      */
     public int nextAvatar()
     {
-        if ( count < myAvatarsId.length - 1 )
+        if ( count < MY_AVATARS_ID.length - 1 )
             count++;
         else
             count = 0;
-        avatarId = myAvatarsId[count];
+        avatarId = MY_AVATARS_ID[count];
 
         return avatarId;
     }
@@ -189,8 +192,8 @@ package com.example.asusnb.travelsurvivalunit;
         if ( count > 0 )
             count--;
         else
-            count = myAvatarsId.length - 1;
-        avatarId = myAvatarsId[count];
+            count = MY_AVATARS_ID.length - 1;
+        avatarId = MY_AVATARS_ID[count];
 
         return avatarId;
     }
