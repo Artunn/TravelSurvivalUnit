@@ -31,7 +31,7 @@ public class City implements Serializable {
         this.cityName = cityName;
         this.country = country;
         lastRetrieved = new GregorianCalendar( TimeZone.getTimeZone( cityName));
-        tradFFAncCurrency = new Collections( context);
+        tradFFAncCurrency = new Collections( context,"","");
         //this.music = music;
         cityCurrency = new Currency();
         count = 0;

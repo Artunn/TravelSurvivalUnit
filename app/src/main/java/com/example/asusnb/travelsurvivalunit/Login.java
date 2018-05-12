@@ -118,6 +118,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             System.out.println("remembermecheck username set as empty");
             editor.putString("password","");
             System.out.println("remembermecheck pass set as empty");
+            editor.apply();
         }
     }
 
