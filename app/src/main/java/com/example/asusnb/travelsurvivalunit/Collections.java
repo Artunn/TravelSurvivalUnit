@@ -14,10 +14,10 @@ public class Collections implements Serializable {
     static HashMap<String, String> countries;
     HashMap<String, String> cityTrad;
     HashMap<String, String> cityFF;
-    static ArrayList<String> traditions;
-    static ArrayList<String> funFacts;
-    static int traditionNo = 1;
-    static int funFactNo = 1;
+    ArrayList<String> traditions;
+    ArrayList<String> funFacts;
+    int traditionNo = 1;
+    int funFactNo = 1;
 
     //constructor
     public Collections( Context context) {
