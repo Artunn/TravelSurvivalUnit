@@ -67,20 +67,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                 }
                             });
                      */
-
-                     if(db.usernameAndPasswordCheck(username.getText().toString(),password.getText().toString()))
-                     {
-                         System.out.print("SADASF");
-                         Toast.makeText(this,"You successfully logged in "+ User.currentUser.getName(),Toast.LENGTH_SHORT).show();
-                         Intent mainMenu = new Intent(this,MainActivity.class);
-                         startActivity(mainMenu);
-                     }
-                     else{
-                         if(!db.changePassword("frendfopik@gmail.com","1111111")){
-                             Toast.makeText(this,"Pass changed",Toast.LENGTH_SHORT).show();
-                         }
-                         //Toast.makeText(this,"CHECK YOUR USERNAME AND PASSWORD",Toast.LENGTH_SHORT).show();
-                     }
+                    if(db.usernameAndPasswordCheck(username.getText().toString(),password.getText().toString()))
+                    {
+                        Toast.makeText(this,"You successfully logged in "+ User.currentUser.getName(),Toast.LENGTH_SHORT).show();
+                        Intent mainMenu = new Intent(this,MainActivity.class);
+                        startActivity(mainMenu);
+                    }
+                    else{
+                        Toast.makeText(this,"CHECK YOUR USERNAME AND PASSWORD",Toast.LENGTH_SHORT).show();
+                    }
                 }
                 break;
             case R.id.createAnAccount:
