@@ -17,7 +17,7 @@ public class FavouritesActivity extends AppCompatActivity {
         lw = findViewById(R.id.favourites);
 
         ArrayAdapter<String> arrayListAdapter = new ArrayAdapter<String> (this,
-                android.R.layout.simple_list_item_1, User.currentUser.favourites);
+                R.layout.tsu_list_item, User.currentUser.favourites);
 
         lw.setAdapter(arrayListAdapter);
     }
