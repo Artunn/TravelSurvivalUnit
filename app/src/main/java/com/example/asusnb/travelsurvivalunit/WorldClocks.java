@@ -68,24 +68,24 @@ public class WorldClocks extends AppCompatActivity {
         String[] splittedTime = time.split(":");
         String[] splittedTimeZone = zone.split(":");
 
+        System.out.println( calendar.getTime());
         timeZoneHour = Integer.parseInt(splittedTimeZone[0]);
         timeZoneMinute = Integer.parseInt(splittedTimeZone[1]);
 
         if( zonePositive) {
             gmtZeroHour = (Integer.parseInt(splittedTime[0]) - timeZoneHour) % 24;
 
-            if( gmtZeroHour < 0) {
 
-                gmtZeroHour = (gmtZeroHour - 1) % 24;
+            gmtZeroMinute = (Integer.parseInt(splittedTime[1]) - timeZoneMinute) % 60;
+            if( gmtZeroMinute < 0) {
+                gmtZeroMinute = gmtZeroMinute + 60;
+                gmtZeroHour--;
             }
             if( gmtZeroHour < 0) {
                 gmtZeroHour = gmtZeroHour + 24;
             }
-            gmtZeroMinute = (Integer.parseInt(splittedTime[1]) - timeZoneMinute) % 60;
-            if( gmtZeroMinute < 0) {
-                gmtZeroMinute = gmtZeroMinute + 60;
-            }
         }
+
         else {
             gmtZeroHour = (Integer.parseInt(splittedTime[0]) + timeZoneHour) % 24;
             if( Integer.parseInt(splittedTime[1]) + timeZoneMinute > 59) {
@@ -94,7 +94,7 @@ public class WorldClocks extends AppCompatActivity {
             }
             gmtZeroMinute = (Integer.parseInt(splittedTime[1]) + timeZoneMinute) % 60;
         }
-
+        System.out.println(gmtZeroHour);
         gmtZeroSecond = Integer.parseInt(splittedTime[2]);
         System.out.println( gmtZeroMinute);
 
