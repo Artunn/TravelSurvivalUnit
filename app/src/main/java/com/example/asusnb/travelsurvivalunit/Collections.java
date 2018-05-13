@@ -67,14 +67,14 @@ public class Collections implements Serializable {
 
         public String getNextFunFact()
         {
-            funFactNo++;
-            return funFacts.get( funFactNo );
+            funFactNo = funFactNo % ( traditions.size() - 1 );
+            return funFacts.get( funFactNo++ );
         }
 
         public String getNextTradition()
         {
-            traditionNo++;
-            return traditions.get(traditionNo);
+            traditionNo = traditionNo % ( traditions.size() - 1 );
+            return traditions.get(traditionNo++);
         }
 
         public String getCurrentTradition() { return traditions.get( traditionNo ); }

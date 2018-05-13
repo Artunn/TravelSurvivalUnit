@@ -27,7 +27,7 @@ public class City implements Serializable {
     //AudioTrack music;
 
     // constructors
-    public City(String cityName, String country, String destination, Context context){
+    public City (String cityName, String country, String destination, Context context){
         this.cityName = cityName;
         this.country = country;
         lastRetrieved = new GregorianCalendar( TimeZone.getTimeZone( cityName));
@@ -39,7 +39,7 @@ public class City implements Serializable {
         updateAllData( destination);
     }
 
-    public City( String cityName, String country){
+    public City (String cityName, String country) {
         this.cityName = cityName;
         this.country = country;
         lastRetrieved = new GregorianCalendar( TimeZone.getTimeZone( cityName));
