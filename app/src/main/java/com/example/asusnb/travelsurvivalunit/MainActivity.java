@@ -15,21 +15,28 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView (R.layout.activity_main);
 
-        TextView tw;
+        TextView tw1;
+        TextView tw2;
+        TextView tw3;
+        TextView tw4;
+        ImageView iv;
         XMLMap map;
         HashMap<String, Double> hmap;
 
-        tw = findViewById (R.id.name_surname_main);
-        tw.setText (User.currentUser.name + " " + User.currentUser.surname);
+        tw1 = findViewById (R.id.name_surname_main);
+        tw1.setText (User.currentUser.name + " " + User.currentUser.surname);
 
-        tw = findViewById (R.id.country_main);
-        tw.setText (User.currentUser.homeCountry);
+        tw2 = findViewById (R.id.country_main);
+        tw2.setText (User.currentUser.homeCountry);
 
-        tw = findViewById (R.id.trans_dir_main);
-        tw.setText (User.currentUser.motherLanguage + " - " + User.currentUser.targetLanguage);
+        tw3 = findViewById (R.id.trans_dir_main);
+        tw3.setText (User.currentUser.motherLanguage + " - " + User.currentUser.targetLanguage);
 
-        tw.findViewById (R.id.city_main);
-        tw.setText (User.currentUser.destination);
+        tw4 = findViewById (R.id.city_main);
+        tw4.setText (User.currentUser.destination);
+
+        iv = findViewById (R.id.avatar);
+        iv.setImageResource (User.currentUser.getAvatar());
 
         map = new XMLMap();
         //hmap = map.getMap();
