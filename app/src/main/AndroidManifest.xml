@@ -33,7 +33,7 @@
         <activity android:name=".ChangePassword" />
         <activity android:name=".FunFactsActivity" />
         <activity android:name=".MyFavouritesActivity" />
-        <activity android:name=".WorldClocks"></activity>
+        <activity android:name=".WorldClocks"/>
     </application>
 
 </manifest>
