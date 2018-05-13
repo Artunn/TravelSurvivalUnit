@@ -98,18 +98,18 @@ public class RegisterSecondScreen extends AppCompatActivity implements AdapterVi
     public String demoTargetLanguage(){
         System.out.println(languageStr + " X ");
         if(languageStr.matches("Türkçe")){
-            return "England";
+            return "English";
         }
         else{
-            return "Turkey";
+            return "Turkish";
         }
     }
     public String demoDestination(){
         if(homeCountryStr.matches("Türkiye")){
-            return "England";
+            return "London";
         }
         else{
-            return "Turkey";
+            return "Turkish";
         }
     }
 }
