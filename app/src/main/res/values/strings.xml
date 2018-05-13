@@ -37,6 +37,7 @@
     <string name="confirm_password">confirm password</string>
     <string name="travel_survival_unit">travel survival unit</string>
     <string name="type_your_mail">type your mail</string>
+    <string name="world_clocks">WORLD CLOCKS</string>
     <string-array name="language_array">
         <item>English</item>
         <item>Türkçe</item>
