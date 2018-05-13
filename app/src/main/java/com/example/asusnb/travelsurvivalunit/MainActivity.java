@@ -33,11 +33,13 @@ public class MainActivity extends AppCompatActivity
 
         map = new XMLMap();
         hmap = map.getMap();
+        /*
         tw = findViewById (R.id.currency_top);
         tw.setText ("1 GBP = " + hmap.get("TRY") + " TRY");
         tw = findViewById (R.id.currency_bottom);
         tw.setText ("1 TRY = " + hmap.get("GBP") + " GBP");
-        //System.out.println (hmap.containsKey("TRY"));
+        */
+        System.out.println (hmap.containsKey("TRY"));
     }
 
     public void openSettings(View view) {
