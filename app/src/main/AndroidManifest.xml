@@ -32,8 +32,9 @@
         <activity android:name=".Subs" />
         <activity android:name=".ChangePassword" />
         <activity android:name=".FunFactsActivity" />
-        <activity android:name=".WorldClocks"/>
-        <activity android:name=".MyFavouritesActivity"></activity>
+        <activity android:name=".WorldClocks" />
+        <activity android:name=".MyFavouritesActivity" />
+        <activity android:name=".FavouritesActivity"></activity>
     </application>
 
 </manifest>

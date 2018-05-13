@@ -18,12 +18,9 @@
     <string name="favourites_button_text">my favourites</string>
     <string name="refresh">refresh</string>
     <string name="degree">4\u00b0 C</string>
-    <string name="currency1_str">1 GBP = 5.5301 TRY</string>
-    <string name="currency2_str">1 TRY = 0.1808 GBP</string>
     <string name="last_retrieved_beg">last retrieved</string>
     <string name="last_retrieved_end">days ago</string>
     <string name="traditions_menu">TRADITIONS</string>
-    <string name="fun_fact">Istanbul spans two continents.</string>
     <string name="favourites_menu">MY FAVOURITES \u30c4</string>
     <string name="fun_fact_two" />
     <string name="fun_fact_three" />
