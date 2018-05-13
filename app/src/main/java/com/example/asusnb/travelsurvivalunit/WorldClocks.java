@@ -64,7 +64,7 @@ public class WorldClocks extends AppCompatActivity {
         time = timeInfo[3];
         zone = timeInfo[4].substring(4, timeInfo[4].length());
         zonePositive = timeInfo[4].charAt(3) == '+';
-        
+
         String[] splittedTime = time.split(":");
         String[] splittedTimeZone = zone.split(":");
 

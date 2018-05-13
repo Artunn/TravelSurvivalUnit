@@ -39,7 +39,7 @@ public class Subs extends AppCompatActivity {
             getSubQuestionsInSecondLanguage.add(x.question[1]);
         }
 
-        stringAdapter = new ArrayAdapter<>( this, android.R.layout.simple_list_item_1,
+        stringAdapter = new ArrayAdapter<>( this, R.layout.tsu_list_item,
                 new ArrayList<String>());
         stringAdapter.addAll( subQuestionsInFirstLanguage);
 

@@ -46,7 +46,7 @@ public class SubWithSpace extends AppCompatActivity {
                         questionInBothLanguages[1]);
             }
             ArrayAdapter<String> x = new ArrayAdapter<>( this,
-                    android.R.layout.simple_list_item_1,
+                    R.layout.tsu_list_item,
                     listViewArrayList);
             listView.setAdapter(x);
         }
