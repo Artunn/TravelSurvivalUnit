@@ -363,7 +363,7 @@ import java.util.List;
     }
 
     /**
-     * Gets the  NoteDataBaseHelper
+     * Gets the NoteDataBaseHelper
      * @return ndbh
      */
     public NoteDataBaseHelper getNoteDataBaseHelper()
