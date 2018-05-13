@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.lang.reflect.Type;
-
 public class TypeTheCode extends AppCompatActivity implements View.OnClickListener {
 
     String codee;
@@ -28,10 +26,10 @@ public class TypeTheCode extends AppCompatActivity implements View.OnClickListen
         continueButton = (Button) findViewById(R.id.continueButton);
         resend = (Button) findViewById(R.id.resend);
 
-        codee = getIntent().getExtras().getString("saveCode",(String)null);
-        mail = getIntent().getExtras().getString("mail",(String)null);
+        codee = getIntent().getExtras().getString("saveCode",null);
+        mail = getIntent().getExtras().getString("mail",null);
 
-        Toast.makeText(this,codee,Toast.LENGTH_LONG).show();
+        Toast.makeText(this,mail,Toast.LENGTH_LONG).show();
 
         resend.setOnClickListener(this);
         continueButton.setOnClickListener(this);

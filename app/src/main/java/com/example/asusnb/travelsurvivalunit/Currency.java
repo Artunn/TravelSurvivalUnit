@@ -1,5 +1,6 @@
 package com.example.asusnb.travelsurvivalunit;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
@@ -7,7 +8,7 @@ import java.util.HashMap;
  * @author __Ayşe Ezgi Yavuz___
  * @version __11.05.2018__
  */
-public class Currency {
+public class Currency implements Serializable {
     //properties
     static XMLMap map;
 

@@ -1,7 +1,6 @@
-/**
+/*
  * Created by User on 5.05.2018.
  */
-
 package com.example.asusnb.travelsurvivalunit;
 
 import android.database.sqlite.SQLiteDatabase;
@@ -44,16 +43,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_3,surname);
         contentValues.put(COL_4,homeCountry);
         long result = db.insert(TABLE_NAME,null ,contentValues);
-        if(result == -1)
-            return false;
-        else
-            return true;
+        return result != -1;
     }
 
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
-        return res;
+        return db.rawQuery("select * from "+TABLE_NAME,null);
     }
 
     public boolean updateData(String username,String name,String surname,String homeCountry) {

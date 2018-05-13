@@ -49,13 +49,10 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
             else{
                 saveCode = passwordResetCode();
                 sendEmail(saveCode);
-                Toast.makeText(this,saveCode, Toast.LENGTH_LONG).show();
-                /*
                 Intent TypeCode = new Intent(this, TypeTheCode.class);
                 TypeCode.putExtra("saveCode",saveCode);
                 TypeCode.putExtra("mail",typeMail.getText().toString());
                 startActivity(TypeCode);
-                */
             }
         }
     }

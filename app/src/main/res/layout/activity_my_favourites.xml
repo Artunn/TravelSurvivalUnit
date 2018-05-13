@@ -27,25 +27,14 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/catcafeaccent"
             android:gravity="center"
-            android:text="@string/fun_fact"
+            android:maxLines="4"
+            android:scrollbarThumbVertical="@android:color/darker_gray"
+            android:scrollbars="vertical"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageButton
-            android:id="@+id/next_button_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fun_fact_one"
-            app:srcCompat="@android:drawable/ic_media_ff" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -67,18 +56,14 @@
             android:id="@+id/fun_fact_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fun_fact_two" />
-
-        <ImageButton
-            android:id="@+id/next_button_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@android:drawable/ic_media_ff" />
+            android:fontFamily="@font/catcafeaccent"
+            android:gravity="center"
+            android:maxLines="4"
+            android:scrollbarThumbVertical="@android:color/darker_gray"
+            android:scrollbars="vertical"
+            android:text="@string/fun_fact_two"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -100,18 +85,15 @@
             android:id="@+id/fun_fact_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fun_fact_three" />
+            android:fontFamily="@font/catcafeaccent"
+            android:gravity="center"
+            android:maxLines="4"
+            android:scrollbarThumbVertical="@android:color/darker_gray"
+            android:scrollbars="vertical"
+            android:text="@string/fun_fact_three"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
 
-        <ImageButton
-            android:id="@+id/next_button_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@android:drawable/ic_media_ff" />
     </android.support.constraint.ConstraintLayout>
 
     <TextView

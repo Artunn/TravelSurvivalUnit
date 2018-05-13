@@ -28,7 +28,7 @@ public class SubWithSpace extends AppCompatActivity {
         space = intent.getStringExtra( "spaceVal");
 
         TextView tv = findViewById( R.id.textView9);
-        tv.setText( english + "\n" + turkish);
+        tv.setText(String.format("%s\n%s", english, turkish));
         ListView listView;
         listView = findViewById( R.id.listView);
 

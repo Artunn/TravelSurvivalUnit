@@ -14,6 +14,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ import javax.xml.parsers.ParserConfigurationException;
  * @author __Ayşe Ezgi Yavuz ___
  * @version __11.05.2018__
  */
-public class XMLMap {
+public class XMLMap implements Serializable {
     // properties
     // XML URL to be parsed
     private static final String URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
@@ -42,26 +43,36 @@ public class XMLMap {
     // constructor
     public XMLMap(){
         parser = new XMLParser();
-        String xml = parser.getXmlFromUrl(URL); // getting XML
-        Document doc = parser.getDomElement(xml); // getting DOM element
-
-        nodeList = doc.getElementsByTagName( KEY_ITEM);
-        // creating new HashMap
         map = new HashMap<String, Double>();
 
-        // looping through all item nodes
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            Element e = (Element) nodeList.item(i);
-            String currencyName = e.getAttribute(KEY_CURRENCY);
-            String currencyValue = e.getAttribute(KEY_RATE);
-            // adding each child node to HashMap key => value
-            map.put( currencyName, Double.parseDouble(currencyValue));
-        }
+        Thread thread = new Thread (new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    String xml = parser.getXmlFromUrl(URL); // getting XML
+                    Document doc = parser.getDomElement(xml); // getting DOM element
+
+                    nodeList = doc.getElementsByTagName(KEY_ITEM);
+
+                    // looping through all item nodes
+                    for (int i = 0; i < nodeList.getLength(); i++) {
+                        Element e = (Element) nodeList.item(i);
+                        String currencyName = e.getAttribute(KEY_CURRENCY);
+                        String currencyValue = e.getAttribute(KEY_RATE);
+                        // adding each child node to HashMap key => value
+                        if ( !currencyValue.isEmpty() )
+                            map.put(currencyName, Double.parseDouble(currencyValue));
+                    }
+                }
+
+                catch (Exception e) {e.printStackTrace();}
+            }
+        });
+
+        thread.start();
     }
     // methods
-    public HashMap<String, Double> getMap() {
-        return map;
-    }
+    public HashMap<String, Double> getMap() {return map;}
 
     /**
      * __XMLParser class to convert to given URL to a doc format___
@@ -78,7 +89,7 @@ public class XMLMap {
          * @param url String
          * @return xml String
          */
-        private String getXmlFromUrl( String url){
+        private String getXmlFromUrl( String url) {
             String xml;
             // defaultHttpClient
             DefaultHttpClient httpClient;

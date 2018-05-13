@@ -3,6 +3,7 @@ package com.example.asusnb.travelsurvivalunit;
 import android.content.Context;
 import android.media.Image;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 /**
@@ -10,43 +11,43 @@ import java.util.TimeZone;
  * @author __Ayşe Ezgi Yavuz___
  * @version __11.05.2018__
  */
-public class City{
+public class City implements Serializable {
     // properties
-    final int[] cityBackgrounds = {};
+    final int[] cityBackgrounds = {}; //Add background pic
+    Image weather; //??
     String cityName;
     String country;
     Collections tradFFAncCurrency;
-    //AudioTrack music;
     Currency cityCurrency;
     double currencyRate;
     GregorianCalendar lastRetrieved;
     int background;
-    Image weather;
     Integer backgroundId;
     int count;
+    //AudioTrack music;
 
     // constructors
-    public City(String cityName, String country, String destination, Context context){
+    public City (String cityName, String country, String destination, Context context){
         this.cityName = cityName;
         this.country = country;
         lastRetrieved = new GregorianCalendar( TimeZone.getTimeZone( cityName));
-        tradFFAncCurrency = new Collections( context);
+        tradFFAncCurrency = new Collections( context,"","");
         //this.music = music;
         cityCurrency = new Currency();
-        backgroundId = cityBackgrounds[count];
         count = 0;
+        backgroundId = cityBackgrounds[count];
         updateAllData( destination);
     }
 
-    public City( String cityName, String country){
+    public City (String cityName, String country) {
         this.cityName = cityName;
         this.country = country;
         lastRetrieved = new GregorianCalendar( TimeZone.getTimeZone( cityName));
         //tradFFAncCurrency = new Collections( cityName, country, destination);
         //this.music = music;
         cityCurrency = new Currency();
-        backgroundId = cityBackgrounds[count];
         count = 0;
+        backgroundId = cityBackgrounds[count];
     }
 
     // methods
@@ -149,10 +150,20 @@ public class City{
     private void updateWeather( Image weather) {
         this.weather = weather;
     }
+
+    /**
+     * Updates the conversion rate of the currency
+     * @param destination String
+     */
     private void updateRate( String destination){
         currencyRate = cityCurrency.convertFromTo( tradFFAncCurrency.countries, tradFFAncCurrency.getCurrency( country),
                 tradFFAncCurrency.getCurrency( destination));
     }
+
+    /**
+     * Orders calender as day/month/year/hour/min
+     * @return lastRetrievedArray int[]
+     */
     private int[] updateLastRetrieved(){
         int [] lastRetrievedArray;
         lastRetrievedArray = new int[ 5];
