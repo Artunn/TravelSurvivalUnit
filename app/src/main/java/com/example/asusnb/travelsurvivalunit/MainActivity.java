@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         tw = findViewById (R.id.currency_bottom);
         tw.setText ("1 TRY = " + hmap.get("GBP") + " GBP");
         */
-        System.out.println (hmap.containsKey("TRY"));
+        //System.out.println (hmap.containsKey("TRY"));
     }
 
     public void openSettings(View view) {
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void openFavourites (View view) {
-        Intent intent = new Intent (this, MyFavouritesActivity.class);
+        Intent intent = new Intent (this, FavouritesActivity.class);
         startActivity (intent);
     }
     public void openWorldClocks (View view) {

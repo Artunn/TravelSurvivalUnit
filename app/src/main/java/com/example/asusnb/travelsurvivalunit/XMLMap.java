@@ -63,9 +63,15 @@ public class XMLMap implements Serializable {
                         if ( !currencyValue.isEmpty() )
                             map.put(currencyName, Double.parseDouble(currencyValue));
                     }
+                    System.out.println ("done");
                 }
 
-                catch (Exception e) {e.printStackTrace();}
+                catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println ("caught");
+                }
+
+                //System.out.println (map.containsKey("TRY"));
             }
         });
 
