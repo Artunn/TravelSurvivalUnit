@@ -33,6 +33,7 @@
     <string name="favourites_menu">MY FAVOURITES \u30c4</string>
     <string name="fun_fact_two" />
     <string name="fun_fact_three" />
+    <string name="world_clocks">World Clocks</string>
     <string-array name="language_array">
         <item>English</item>
         <item>Türkçe</item>
