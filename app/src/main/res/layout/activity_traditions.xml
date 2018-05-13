@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tradition_order"
+        android:id="@+id/tradition_order_display"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -50,8 +50,10 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="toggleFavourite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tradition_order"
+        app:layout_constraintStart_toEndOf="@+id/tradition_order_display"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/btn_star" />
 
@@ -63,6 +65,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
+        android:onClick="nextTradition"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tradition"
@@ -85,7 +88,6 @@
         android:paddingRight="10dp"
         android:scrollbarThumbVertical="@android:color/darker_gray"
         android:scrollbars="vertical"
-        android:text="@string/tradition_demo"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

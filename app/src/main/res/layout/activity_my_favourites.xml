@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/favourites_menu">
 
         <TextView
-            android:id="@+id/fun_fact_one"
+            android:id="@+id/fun_fact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/catcafeaccent"
@@ -44,7 +44,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fun_fact_one"
+            app:layout_constraintTop_toBottomOf="@+id/fun_fact"
             app:srcCompat="@android:drawable/ic_media_ff" />
 
     </android.support.constraint.ConstraintLayout>

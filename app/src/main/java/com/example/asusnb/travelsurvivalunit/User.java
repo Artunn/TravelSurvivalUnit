@@ -36,17 +36,18 @@ import java.util.List;
 
     //Language motherLanguage;
 
-    public User() {}
+    public User() {
+        favourites = new ArrayList<String>();
+    }
 
-    public User( Context context )
-    {
+    public User( Context context ) {
+        favourites = new ArrayList<String>();
         ndbh = new NoteDataBaseHelper( context );
     }
 
     public User( String username, String password, String homeCountry, String name, String surname,
                  String motherLanguage, String targetLanguage, String destination,  Context context,
-                 String email)
-    {
+                 String email) {
         this.username = username;
         this.password = password;
         this.homeCountry = homeCountry;
@@ -54,7 +55,7 @@ import java.util.List;
         this.surname = surname;
         count = 0;
         avatarId = MY_AVATARS_ID[count];
-        //favourites = new ArrayList<String>();
+        favourites = new ArrayList<String>();
         this.motherLanguage = motherLanguage;
         this.targetLanguage = targetLanguage;
         this.destination = destination;
@@ -74,7 +75,7 @@ import java.util.List;
         this.surname = surname;
         count = 0;
         avatarId = MY_AVATARS_ID[count];
-        //favourites = new ArrayList<String>();
+        favourites = new ArrayList<String>();
         this.motherLanguage = motherLanguage;
         this.targetLanguage = targetLanguage;
         this.destination = destination;
@@ -249,16 +250,14 @@ import java.util.List;
         count--;
     }
 
-    //public void addToFavourites ( String str )
-    //{
-    //    favourites.add(str);
-    //}
+    public void addToFavourites (String str) {
+        favourites.add(str);
+    }
 
 
-    //public ArrayList<String> getFavourites()
-    //{
-    //    return favourites;
-    //}
+    public ArrayList<String> getFavourites() {
+        return favourites;
+    }
 
     /**
      * Sets the targetLanguage for translation
@@ -384,5 +383,29 @@ import java.util.List;
      */
     public User getCurrentUser(){
         return currentUser;
+    }
+
+    public boolean inFavourites (String str) {
+        if ( !favourites.isEmpty() ) {
+            for (String s : favourites) {
+                if (str.equals(s))
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean removeFromFavourites (String str) {
+        if ( !favourites.isEmpty() ) {
+            for (String s : favourites) {
+                if (str.equals(s)) {
+                    favourites.remove(s);
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

@@ -14,9 +14,9 @@ public class Language implements UniversalData {
     public String translate( String[][] motherLanguage , String[][] targetLanguage , String sentence)
     {
         int row ;
-        int coloumn;
+        int column;
         row = -1;
-        coloumn = -1;
+        column = -1;
 
         for (int i = 0 ; i < motherLanguage.length ; i++)
         {
@@ -24,12 +24,12 @@ public class Language implements UniversalData {
             {
                 if ( sentence.equals(motherLanguage[i][j])) {
                     row = i ;
-                    coloumn = j ;
+                    column = j ;
 
                 }
             }
         }
-        return targetLanguage [row][coloumn];
+        return targetLanguage [row][column];
     }
 }
 
