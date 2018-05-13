@@ -39,11 +39,12 @@ public class XMLMap implements Serializable {
     private XMLParser parser; //reference for the inner class XMLParser
     private NodeList nodeList;
     private HashMap<String, Double> map;
-
+    HashMap[] maps;
     // constructor
     public XMLMap(){
         parser = new XMLParser();
         map = new HashMap<String, Double>();
+        maps = new HashMap[1];
 
         Thread thread = new Thread (new Runnable() {
             @Override
@@ -63,6 +64,8 @@ public class XMLMap implements Serializable {
                         if ( !currencyValue.isEmpty() )
                             map.put(currencyName, Double.parseDouble(currencyValue));
                     }
+                    maps[0] = map;
+                    System.out.println( map.get("TRY"));
                     System.out.println ("done");
                 }
 
