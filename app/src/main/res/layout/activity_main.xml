@@ -217,6 +217,7 @@
             android:layout_marginBottom="5dp"
             android:background="#32ffffff"
             android:fontFamily="@font/catcafeaccent"
+            android:onClick="openWorldClocks"
             android:text="@string/world_clock_button_text"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
