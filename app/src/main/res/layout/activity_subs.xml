@@ -9,13 +9,14 @@
 
     <ListView
         android:id="@+id/listOfSubs"
-        android:fontFamily="@font/catcafeaccent"
-        android:textColor="@android:color/background_light"
-        android:background="#32ffffff"
         android:layout_width="344dp"
         android:layout_height="405dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="160dp"
+        android:background="#32ffffff"
+        android:fontFamily="@font/catcafeaccent"
+        android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

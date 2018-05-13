@@ -63,7 +63,7 @@ public class WorldClocks extends AppCompatActivity {
         String[] timeInfo = calendar.getTime().toString().split(" ");
         time = timeInfo[3];
         zone = timeInfo[4].substring(4, timeInfo[4].length());
-        zonePositive = timeInfo[4].charAt(4) == '+';
+        zonePositive = timeInfo[4].charAt(3) == '+';
 
         System.out.println( calendar.getTime());
         String[] splittedTime = time.split(":");
