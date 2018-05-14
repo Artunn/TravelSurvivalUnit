@@ -21,13 +21,12 @@ public class SettingsActivity extends AppCompatActivity {
     EditText destination;
     EditText homeCountry;
     EditText background;
+    String tempLanguage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        artun = new User("artunn", "1234", "bursa", "artun",
-                "cura", "English", "Turkish", "Turkey",
-                null,"MAIL");
+        artun = User.currentUser;
 
 
         nameText = findViewById(R.id.nameEdit);
@@ -42,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
         languageText.setText(artun.getMotherLanguage());
         homeCountry.setText(artun.homeCountry);
         destination.setText(artun.destination);
+        tempLanguage = languageText.getText().toString();
     }
     public void optionTheme(View view) {
         String[] listItems = new String[] {"item1","item2"};
@@ -60,7 +60,14 @@ public class SettingsActivity extends AppCompatActivity {
     public void setUser(View view) {
         artun.setName(nameText.getText().toString());
         artun.setSurname(surnameText.getText().toString());
-        artun.setMotherLanguage(languageText.getText().toString());
+        if( languageText.getText().toString().equals("english") ||
+                languageText.getText().toString().equals("turkish")) {
+            artun.setMotherLanguage(languageText.getText().toString());
+            tempLanguage = languageText.getText().toString();
+        }
+        else {
+            languageText.setText(tempLanguage);
+        }
         artun.setHomeCountry(homeCountry.getText().toString());
         artun.setDestination(destination.getText().toString());
     }
