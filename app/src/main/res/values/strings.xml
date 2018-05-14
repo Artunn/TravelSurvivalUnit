@@ -9,6 +9,7 @@
     <string name="settingsLang">lang :</string>
     <string name="settingsHomeCountry">home country :</string>
     <string name="settingsBackground">background :</string>
+    <string name="settingsDestination">destination :</string>
     <string name="theme">choose</string>
     <string name="translation_button_text">translation</string>
     <string name="traditions_button_text">traditions</string>
@@ -35,15 +36,15 @@
     <string name="type_your_mail">type your mail</string>
     <string name="world_clocks">WORLD CLOCKS</string>
     <string-array name="language_array">
-        <item>English</item>
-        <item>Türkçe</item>
-        <item>Français</item>
-        <item>Deutsch</item>
+        <item>english</item>
+        <item>türkçe</item>
+        <item>français</item>
+        <item>deutsch</item>
     </string-array>
     <string-array name="country_array">
-        <item>England</item>
-        <item>Türkiye</item>
-        <item>France</item>
-        <item>Germany</item>
+        <item>england</item>
+        <item>türkiye</item>
+        <item>france</item>
+        <item>germany</item>
     </string-array>
 </resources>

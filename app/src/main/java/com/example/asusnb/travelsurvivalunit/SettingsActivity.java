@@ -9,11 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    User artun;
+    User user;
     Button set;
     EditText nameText;
     EditText surnameText;
@@ -22,11 +21,13 @@ public class SettingsActivity extends AppCompatActivity {
     EditText homeCountry;
     EditText background;
     String tempLanguage;
+    ImageView avatar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        artun = User.currentUser;
+        user = User.currentUser;
 
 
         nameText = findViewById(R.id.nameEdit);
@@ -35,41 +36,31 @@ public class SettingsActivity extends AppCompatActivity {
         homeCountry = findViewById(R.id.homeCountryEdit);
         background = findViewById(R.id.backgroundEdit);
         set = findViewById(R.id.button4);
-        destination = findViewById(R.id.editText6);
-        nameText.setText(artun.getName());
-        surnameText.setText(artun.getSurname());
-        languageText.setText(artun.getMotherLanguage());
-        homeCountry.setText(artun.homeCountry);
-        destination.setText(artun.destination);
-        tempLanguage = languageText.getText().toString();
-    }
-    public void optionTheme(View view) {
-        String[] listItems = new String[] {"item1","item2"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        destination = findViewById(R.id.destinationEdit);
+        avatar = findViewById(R.id.avatarImage);
 
-        builder.setTitle(R.string.theme);
-        builder.setSingleChoiceItems(listItems, -1,new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        nameText.setText(user.getName());
+        surnameText.setText(user.getSurname());
+        languageText.setText(user.getMotherLanguage());
+        homeCountry.setText(user.homeCountry);
+        destination.setText(user.destination);
+        tempLanguage = languageText.getText().toString();
+        avatar.setImageResource(user.getAvatar());
     }
 
     public void setUser(View view) {
-        artun.setName(nameText.getText().toString());
-        artun.setSurname(surnameText.getText().toString());
-        if( languageText.getText().toString().equals("english") ||
-                languageText.getText().toString().equals("turkish")) {
-            artun.setMotherLanguage(languageText.getText().toString());
+        user.setName(nameText.getText().toString());
+        user.setSurname(surnameText.getText().toString());
+        if( languageText.getText().toString().toLowerCase().equals("english") ||
+                languageText.getText().toString().toLowerCase().equals("türkçe")) {
+            user.setMotherLanguage(languageText.getText().toString());
             tempLanguage = languageText.getText().toString();
         }
         else {
             languageText.setText(tempLanguage);
         }
-        artun.setHomeCountry(homeCountry.getText().toString());
-        artun.setDestination(destination.getText().toString());
+        user.setHomeCountry(homeCountry.getText().toString());
+        user.setDestination(destination.getText().toString());
     }
 
     public void changeAvatarNext(View view) {
@@ -77,18 +68,18 @@ public class SettingsActivity extends AppCompatActivity {
         int image;
 
         imageView = findViewById( R.id.avatarImage);
-        image = artun.nextAvatar();
+        image = user.nextAvatar();
         imageView.setImageResource( image);
-        artun.setAvatar( image);
+        user.setAvatar( image);
     }
     public void changeAvatarPrevious(View view) {
         ImageView imageView;
         int image;
 
         imageView = findViewById( R.id.avatarImage);
-        image = artun.previousAvatar();
+        image = user.previousAvatar();
         imageView.setImageResource( image);
-        artun.setAvatar( image);
+        user.setAvatar( image);
     }
     public void goBack(View view) {
         Intent intent;

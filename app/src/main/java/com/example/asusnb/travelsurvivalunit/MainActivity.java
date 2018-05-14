@@ -43,15 +43,11 @@ public class MainActivity extends AppCompatActivity
         iv.setImageResource (User.currentUser.getAvatar());
 
         map = new XMLMap();
-        //hmap = map.getMap();
-        //System.out.println( hmap);
 
         twCurT = findViewById (R.id.currency_top);
         twCurT.setText ("1 GBP = " + "5.84892" + " TRY");
         twCurB = findViewById (R.id.currency_bottom);
         twCurB.setText ("1 TRY = " + "0.170972" + " GBP");
-
-        //System.out.println (hmap.containsKey("TRY"));
     }
 
     public void openSettings(View view) {
