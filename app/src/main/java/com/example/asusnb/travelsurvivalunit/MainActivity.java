@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity
         TextView tw2;
         TextView tw3;
         TextView tw4;
+        TextView twCurT;
+        TextView twCurB;
+
         ImageView iv;
         XMLMap map;
         HashMap<String, Double> hmap;
@@ -42,10 +46,10 @@ public class MainActivity extends AppCompatActivity
         //hmap = map.getMap();
         //System.out.println( hmap);
 
-        tw = findViewById (R.id.currency_top);
-        tw.setText ("1 GBP = " + "5.84892" + " TRY");
-        tw = findViewById (R.id.currency_bottom);
-        tw.setText ("1 TRY = " + "0.170972" + " GBP");
+        twCurT = findViewById (R.id.currency_top);
+        twCurT.setText ("1 GBP = " + "5.84892" + " TRY");
+        twCurB = findViewById (R.id.currency_bottom);
+        twCurB.setText ("1 TRY = " + "0.170972" + " GBP");
 
         //System.out.println (hmap.containsKey("TRY"));
     }
